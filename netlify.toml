@@ -3,12 +3,8 @@
   publish = "."
   command = ""
 
-# Force www (bare domain also redirects at DNS level)
-[[redirects]]
-  from = "https://fairwall.ai/*"
-  to = "https://www.fairwall.ai/:splat"
-  status = 301
-  force = true
+# Host canonicalization (www vs bare) is handled by Netlify's own
+# domain settings — do NOT add a forced redirect here, it causes a loop.
 
 # Pretty URLs
 [[redirects]]
