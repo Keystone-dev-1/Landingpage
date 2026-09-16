@@ -1,0 +1,102 @@
+/* Mobile/tablet overrides. Component styles are inline, so these need !important. */
+@media (max-width:1024px){
+  #root [style*="grid-template-columns: repeat(4"],#root [style*="grid-template-columns:repeat(4"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  #root [style*="grid-template-columns: repeat(3"],#root [style*="grid-template-columns:repeat(3"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  #root section{padding-left:28px!important;padding-right:28px!important}
+  #root header{padding-left:24px!important;padding-right:24px!important}
+}
+@media (max-width:820px){
+  #root section{padding:52px 18px!important}
+  #root .hero-shield-img{object-fit:contain!important;background:var(--navy-950)}
+  #root .hero-shield-box{height:420px!important}
+  /* header: compact bar + bottom sheet */
+  #root header{flex-wrap:nowrap!important;gap:8px;padding:10px 14px!important}
+  #root header img{height:38px!important}
+  #root header a[href="#"] span{font-size:16px!important}
+  #root .nav-desktop{display:none!important}
+  #root .hdr-signin{display:none!important}
+  #root .nav-burger{display:flex!important}
+  #root header > div:last-child{gap:8px!important;flex:0 0 auto}
+  /* every multi-column grid stacks */
+  #root [style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr)!important}
+  /* hero */
+  #root h1{font-size:clamp(30px,8vw,44px)!important}
+  #root h2{font-size:clamp(24px,6.2vw,32px)!important}
+  #root video{object-position:center}
+  #root section:nth-of-type(1) p{font-size:16px!important;max-width:none!important}
+  #root [style*="height: 340px"],#root [style*="height:340px"]{height:220px!important}
+  /* buttons wrap */
+  #root section > div > div[style*="display: flex"][style*="gap: 12px"]{flex-wrap:wrap}
+  /* live demo: 6 steps as a 3-up grid, no sideways scroll */
+  #root #demo > div > div[style*="justify-content: space-between"]:first-of-type{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px 8px!important;justify-content:stretch!important;overflow:visible!important}
+  #root #demo > div > div[style*="justify-content: space-between"]:first-of-type > div[style*="position: absolute"]{display:none!important}
+  #root #demo > div > div:first-of-type > div{min-width:0!important;width:auto!important}
+  #root #demo > div > div:first-of-type > div > div:first-child{width:44px!important;height:44px!important}
+  #root #demo > div > div:first-of-type > div > div:nth-child(2){font-size:11.5px!important;margin-top:8px!important}
+  /* flow direction: → across a row, ↓ at the row end */
+  #root #demo > div > div:first-of-type > div{position:relative}
+  #root #demo > div > div:first-of-type > div::after{content:'\2192';position:absolute;top:12px;right:-7px;color:var(--teal-600);font-weight:700;font-size:16px;line-height:1}
+  #root #demo > div > div:first-of-type > div:nth-child(4)::after{content:'\2199';top:auto;bottom:-16px;right:auto;left:38%}
+  #root #demo > div > div:first-of-type > div:nth-child(7)::after{display:none}
+  /* product tour: reflow the dashboard — no sideways scroll */
+  #root #tour > div > div[style*="box-shadow"]{flex-direction:column!important;overflow:hidden!important}
+  #root #tour [style*="width: 64px"]{width:100%!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;padding:10px 12px!important;border-right:none!important;border-bottom:1px solid rgba(255,255,255,.08)!important}
+  #root #tour [style*="width: 64px"] > div[style*="margin-bottom"]{margin-bottom:0!important;flex:0 0 auto}
+  #root #tour [style*="width: 64px"] > div[style*="flex-direction: column"]{flex-direction:row!important;flex:1 1 auto!important;justify-content:center;gap:6px!important}
+  #root #tour [style*="width: 64px"] > div[style*="flex-direction: column"] > div{width:36px!important;height:36px!important}
+  #root #tour [style*="width: 64px"] > div:last-child{flex:0 0 auto}
+  /* panel header + email stack */
+  #root #tour > div > div[style*="box-shadow"] > div:last-child > div:first-child{flex-wrap:wrap;row-gap:8px;padding:12px 14px!important}
+  #root #tour > div > div[style*="box-shadow"] > div:last-child > div:last-child{padding:14px!important}
+  /* dashboard tables become stacked rows */
+  #root #tour table{display:block;width:100%;white-space:normal}
+  #root #tour thead{display:none}
+  #root #tour tbody{display:block}
+  #root #tour tr{display:flex!important;flex-wrap:wrap;align-items:center;gap:4px 10px;padding:10px 2px}
+  #root #tour td{padding:0!important;font-size:11.5px!important;white-space:normal!important;word-break:break-all}
+  #root #tour td:first-child{flex:1 1 100%}
+  #root #tour textarea,#root #tour input{max-width:100%}
+  /* the description callout stacks */
+  #root #tour > div > div[style*="rgba(31, 216, 164, 0.08)"]{flex-wrap:wrap;row-gap:8px}
+  #root #tour > div > div[style*="rgba(31, 216, 164, 0.08)"] > span:nth-child(2){flex:1 1 100%!important;order:2;font-size:14px!important}
+  #root #tour > div > div[style*="rgba(31, 216, 164, 0.08)"] > span:nth-child(3){order:3;border-left:none!important;padding-left:0!important;margin-left:0!important;white-space:normal!important;font-size:11px!important}
+  /* pricing: segment chips and billing toggle wrap */
+  #root #pricing > div > div[style*="display: flex"]{flex-wrap:wrap}
+  #root #pricing button{white-space:nowrap}
+  /* segments: tap to flip on touch screens */
+  #root .flip-card{height:320px!important}
+  #root .flip-card.flipped .flip-card-inner{transform:rotateY(180deg)!important}
+  #root .flip-card-inner > div:last-child{overflow-y:auto}
+  /* book a demo */
+  #root #book-demo iframe{height:640px!important}
+  /* cookie bar + chat launcher spacing */
+  #root [aria-label="Open chat"],#root [aria-label="Close chat"]{width:50px!important;height:50px!important}
+  /* generic: nothing overflows */
+  #root img,#root iframe,#root video{max-width:100%}
+  #root [style*="max-width"]{max-width:100%!important}
+  html,body{overflow-x:hidden;max-width:100%}
+  #root,#root section,#root section > div{max-width:100%!important;overflow-x:clip}
+  /* footer: stack the link menu */
+  #root footer > div{flex-direction:column!important;align-items:flex-start!important;gap:16px}
+  #root footer > div > span:last-child{flex-direction:column!important;align-items:flex-start!important;gap:10px!important;width:100%}
+  #root footer a{padding:2px 0}
+}
+@media (max-width:560px){
+  #root section{padding:40px 14px!important}
+  #root header{padding:10px 12px!important}
+  #root #book-demo iframe{height:560px!important}
+  #root #demo > div > div[style*="justify-content: space-between"]:first-of-type{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:26px 6px!important}
+  #root #demo > div > div:first-of-type > div > div:first-child{width:38px!important;height:38px!important;font-size:14px!important}
+  #root #demo > div > div:first-of-type > div > div:nth-child(2){font-size:10.5px!important;line-height:1.25!important}
+  /* 3-up: children are [line,1,2,3,4,5,6] — → inside a row, ↙ wrapping to the next row */
+  #root #demo > div > div:first-of-type > div:nth-child(2)::after,#root #demo > div > div:first-of-type > div:nth-child(3)::after,#root #demo > div > div:first-of-type > div:nth-child(5)::after,#root #demo > div > div:first-of-type > div:nth-child(6)::after{content:'\2192';top:9px;bottom:auto;right:-5px;left:auto;transform:none;font-size:14px}
+  #root #demo > div > div:first-of-type > div:nth-child(4)::after{display:none}
+  #root #demo > div > div:first-of-type > div:nth-child(7)::after{display:none}
+  /* legend: align to the step columns — col 1 = you, cols 2-3 = fAIrwall AI */
+  #root #demo > div > div[style*="gap: 20px"]{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:0!important;margin-top:-22px!important}
+  #root #demo > div > div[style*="gap: 20px"] > span:first-child{grid-column:1;justify-content:center}
+  #root #demo > div > div[style*="gap: 20px"] > span:last-child{grid-column:2 / 4;justify-content:center}
+}
+@media (hover:none){
+  .flip-card.flipped .flip-card-inner{transform:rotateY(180deg)!important}
+}

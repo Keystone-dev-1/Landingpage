@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reversible PII redaction, explained — Fairwall AI</title>
+<meta name="description" content="Redaction that cannot be undone makes AI output useless. Reversible, local redaction keeps the answer usable while the model never sees the real data. Here is the mechanism.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://www.fairwall.ai/pii-redaction-explained.html">
+<link rel="icon" href="./assets/logo-mark-new.png">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Fairwall AI"><meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://www.fairwall.ai/pii-redaction-explained.html">
+<meta property="og:title" content="Reversible PII redaction, explained"><meta property="og:description" content="Redaction that cannot be undone makes AI output useless. Reversible, local redaction keeps the answer usable while the model never sees the real data. Here is the mechanism.">
+<meta property="og:image" content="https://www.fairwall.ai/assets/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Reversible PII redaction, explained"><meta name="twitter:description" content="Redaction that cannot be undone makes AI output useless. Reversible, local redaction keeps the answer usable while the model never sees the real data. Here is the mechanism."><meta name="twitter:image" content="https://www.fairwall.ai/assets/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Reversible PII redaction, explained","description":"Redaction that cannot be undone makes AI output useless. Reversible, local redaction keeps the answer usable while the model never sees the real data. Here is the mechanism.","inLanguage":"en","datePublished":"2026-09-10","dateModified":"2026-09-10","image":"https://www.fairwall.ai/assets/og-image.png","mainEntityOfPage":"https://www.fairwall.ai/pii-redaction-explained.html","author":{"@type":"Organization","name":"Fairwall AI","url":"https://www.fairwall.ai/"},"publisher":{"@type":"Organization","name":"Fairwall AI","logo":{"@type":"ImageObject","url":"https://www.fairwall.ai/assets/logo-mark-new.png"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fairwall.ai/"},{"@type":"ListItem","position":2,"name":"Insights","item":"https://www.fairwall.ai/insights.html"},{"@type":"ListItem","position":3,"name":"Reversible PII redaction, explained","item":"https://www.fairwall.ai/pii-redaction-explained.html"}]}]}</script>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="legal.css"><link rel="stylesheet" href="article.css"><script src="./analytics.js"></script></head>
+<body>
+<header class="lg-head">
+<a class="lg-logo" href="index.html"><img src="./assets/logo-mark-new.png" alt="Fairwall AI"><span class="lg-word">F<span>ai</span>rwall <span>AI</span></span></a>
+<nav class="lg-nav"><a href="index.html#tour">Product</a><a href="index.html#pricing">Pricing</a><a href="insights.html">Insights</a><a href="book-demo.html">Book a demo</a></nav>
+</header>
+<section class="lg-hero"><div class="lg-inner">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> / <a href="insights.html">Insights</a></nav>
+<p class="lg-eyebrow">How it works</p>
+<h1>Reversible PII redaction, explained</h1>
+<p>Redaction that cannot be reversed makes AI output useless, so people stop using it. The mechanism that solves this is simple, and it all happens on your device.</p>
+</div></section>
+<main><article class="lg-inner">
+<h2>The problem with ordinary redaction</h2>
+<p>Classic redaction is destructive. A name becomes a black bar, and the black bar is permanent. That is correct for a document being released under disclosure and wrong for a prompt, because the reply you get back is addressed to a black bar. Ask a model to draft a letter to <em>[REDACTED]</em> about invoice <em>[REDACTED]</em> and you get a template you now have to fill in by hand — which is the work you were trying to avoid.</p>
+<p>So users do the rational thing and turn the redaction off. A control that makes the tool useless does not get used.</p>
+<h2>The mechanism</h2>
+<p>Reversible redaction replaces each sensitive value with a stable, typed placeholder and keeps the mapping locally.</p>
+<ol>
+<li><strong>Detect.</strong> As text is composed, pattern and context matching flags entities: names, emails, phone numbers, national IDs, card numbers, addresses, dates, monetary amounts, account and invoice references, API keys.</li>
+<li><strong>Confirm.</strong> Each detection is shown to the user, who can accept it or mark it public. Detection suggests; it does not decide.</li>
+<li><strong>Substitute.</strong> Each confirmed value is replaced with a typed token — <code>[REDACTED_PERSON_01]</code>, <code>[REDACTED_MONEY_01]</code> — and the token-to-value map is held in local memory.</li>
+<li><strong>Send.</strong> Only the substituted text is transmitted. The model sees structure, not identity.</li>
+<li><strong>Restore.</strong> The reply comes back containing the same tokens. They are swapped for the real values on the device, before the user sees the text.</li>
+</ol>
+<h2>Why the model does not need the real values</h2>
+<p>Language models operate on structure and relation, not on the literal identity of an entity. "Draft a dispute letter for <code>[REDACTED_PERSON_01]</code> regarding <code>[REDACTED_MONEY_01]</code> charged on <code>[REDACTED_DATE_01]</code>" contains everything the model needs to produce the letter. Typed tokens preserve the grammatical role and the semantic category; the model conjugates around them correctly. Restoring afterwards yields the same output you would have received had you sent the real data — because for the purposes of the task, you did.</p>
+<h2>Where the mapping lives</h2>
+<p>This is the part that matters and the part most easily got wrong. If the token map is stored on a server, that server now holds a decryption key for every prompt your organisation has ever sent, and you have concentrated the risk instead of removing it. In a correct implementation the map exists only in memory on the user's own device, for the lifetime of the exchange. There is no cloud component that could be subpoenaed, breached or misconfigured, because there is nothing there.</p>
+<h2>What it costs</h2>
+<p>Detection, substitution and restoration together add roughly 68 milliseconds — below the threshold at which a person notices a delay. For organisations that cannot send anything at all, the same pipeline runs against a fully local model with no network component.</p>
+<p><a href="index.html#demo">Watch the substitution and restore happen</a> on text you type yourself.</p>
+<div class="art-cta">
+<h2 style="border:none;margin:0 0 8px;padding:0">See it on your own data.</h2>
+<p style="margin:0 0 16px">A 30-minute walkthrough of detection, redaction and restore on the kind of documents your team actually handles.</p>
+<a class="art-btn" href="book-demo.html">Book a demo</a>
+</div>
+<h2>Related reading</h2>
+<ul><li><a href="gdpr-chatgpt.html">Can you use ChatGPT under GDPR?</a></li><li><a href="stop-data-leaks-ai.html">How to stop staff pasting client data into AI tools</a></li><li><a href="shadow-ai.html">Shadow AI: why most AI use is invisible</a></li></ul>
+<p class="art-note">This article is general information, not legal advice. Fairwall AI is a brand and product of Data Dynamics AI FlexCo, Vienna, Austria.</p>
+</article></main>
+<footer class="lg-foot"><div class="lg-inner">
+<p>© 2026 Fairwall AI — a product of Data Dynamics AI FlexCo, Vienna.</p>
+<p><a href="index.html">Home</a> · <a href="insights.html">Insights</a> · <a href="impressum.html">Impressum</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></p>
+</div></footer>
+</body></html>

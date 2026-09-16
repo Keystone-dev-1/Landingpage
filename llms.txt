@@ -1,0 +1,37 @@
+# Fairwall AI
+
+> Fairwall AI is a local privacy layer for AI use. It detects sensitive data on the user's own device and redacts it before a prompt reaches a cloud AI tool (ChatGPT, Claude, Gemini and others), then restores the real values in the reply. Nothing sent. Nothing stored. Nothing risked.
+
+Fairwall AI is a brand and product of Data Dynamics AI FlexCo, Biraghigasse 33, 1130 Vienna, Austria. Contact: juan@ddynamics.ai.
+
+## What it does
+- Detects names, emails, phone numbers, national IDs, financial figures, addresses, secrets and API keys as they are typed.
+- Redaction is reversible: placeholders are mapped locally, and the real values are restored in the AI reply.
+- Every protection event is logged with a forensic ID, timestamp and latency figure, searchable and downloadable.
+- Typical latency overhead: ~68ms. A 100% local / air-gapped option is available.
+- Built for GDPR, HIPAA and PCI-DSS workflows. EU-based company, EU data residency.
+
+## How it is deployed
+- Browser plug-in — covers every AI tool used in the browser, automatically.
+- Desktop app and proxy layer — covers local applications and all data and media types.
+- n8n nodes — purpose-built integration for automated AI workflows.
+
+## Pricing
+- Individuals: from €8.50/month (Basic), €10 (Medium), €12 (Advanced). 30% off billed yearly. 15-day free trial.
+- Corporates and AI agencies: quoted per rollout, scoped in a demo call.
+
+## Insights (long-form)
+- [Can you use ChatGPT under GDPR?](https://www.fairwall.ai/gdpr-chatgpt.html): which GDPR articles apply to cloud AI use and why local redaction resolves most of them.
+- [Shadow AI: why most AI use at work is invisible](https://www.fairwall.ai/shadow-ai.html): why blocking fails and device-level protection works.
+- [How to stop staff pasting client data into AI tools](https://www.fairwall.ai/stop-data-leaks-ai.html): a five-step operational approach.
+- [Reversible PII redaction, explained](https://www.fairwall.ai/pii-redaction-explained.html): the token substitution and local restore mechanism.
+- [Who is liable when a client's data reaches a model?](https://www.fairwall.ai/ai-privacy-for-agencies.html): processor obligations for AI agencies.
+
+## Pages
+- [Home (English)](https://www.fairwall.ai/): product overview, live demo, pricing, roadmap.
+- [Home (German)](https://www.fairwall.ai/index-de.html): German version of the site.
+- [Book a demo](https://www.fairwall.ai/book-demo.html): 30-minute walkthrough on your own data.
+- [Insights](https://www.fairwall.ai/insights.html): long-form articles on AI privacy and compliance.
+- [Contact](https://www.fairwall.ai/contact.html)
+- [Impressum / Legal notice](https://www.fairwall.ai/impressum.html)
+- [Terms & Conditions](https://www.fairwall.ai/terms.html)

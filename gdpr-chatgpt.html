@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Can you use ChatGPT under GDPR? — Fairwall AI</title>
+<meta name="description" content="Using ChatGPT or Claude at work is not automatically a GDPR breach. What matters is which data leaves your building, on what legal basis, and whether you can prove it. Here is the short version.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://www.fairwall.ai/gdpr-chatgpt.html">
+<link rel="icon" href="./assets/logo-mark-new.png">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Fairwall AI"><meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://www.fairwall.ai/gdpr-chatgpt.html">
+<meta property="og:title" content="Can you use ChatGPT under GDPR?"><meta property="og:description" content="Using ChatGPT or Claude at work is not automatically a GDPR breach. What matters is which data leaves your building, on what legal basis, and whether you can prove it. Here is the short version.">
+<meta property="og:image" content="https://www.fairwall.ai/assets/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Can you use ChatGPT under GDPR?"><meta name="twitter:description" content="Using ChatGPT or Claude at work is not automatically a GDPR breach. What matters is which data leaves your building, on what legal basis, and whether you can prove it. Here is the short version."><meta name="twitter:image" content="https://www.fairwall.ai/assets/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Can you use ChatGPT under GDPR?","description":"Using ChatGPT or Claude at work is not automatically a GDPR breach. What matters is which data leaves your building, on what legal basis, and whether you can prove it. Here is the short version.","inLanguage":"en","datePublished":"2026-09-10","dateModified":"2026-09-10","image":"https://www.fairwall.ai/assets/og-image.png","mainEntityOfPage":"https://www.fairwall.ai/gdpr-chatgpt.html","author":{"@type":"Organization","name":"Fairwall AI","url":"https://www.fairwall.ai/"},"publisher":{"@type":"Organization","name":"Fairwall AI","logo":{"@type":"ImageObject","url":"https://www.fairwall.ai/assets/logo-mark-new.png"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fairwall.ai/"},{"@type":"ListItem","position":2,"name":"Insights","item":"https://www.fairwall.ai/insights.html"},{"@type":"ListItem","position":3,"name":"Can you use ChatGPT under GDPR?","item":"https://www.fairwall.ai/gdpr-chatgpt.html"}]}]}</script>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="legal.css"><link rel="stylesheet" href="article.css"><script src="./analytics.js"></script></head>
+<body>
+<header class="lg-head">
+<a class="lg-logo" href="index.html"><img src="./assets/logo-mark-new.png" alt="Fairwall AI"><span class="lg-word">F<span>ai</span>rwall <span>AI</span></span></a>
+<nav class="lg-nav"><a href="index.html#tour">Product</a><a href="index.html#pricing">Pricing</a><a href="insights.html">Insights</a><a href="book-demo.html">Book a demo</a></nav>
+</header>
+<section class="lg-hero"><div class="lg-inner">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> / <a href="insights.html">Insights</a></nav>
+<p class="lg-eyebrow">Compliance</p>
+<h1>Can you use ChatGPT under GDPR?</h1>
+<p>Using a cloud AI assistant at work is not automatically a GDPR breach. What matters is which personal data leaves your organisation, on what legal basis, and whether you can prove what happened.</p>
+</div></section>
+<main><article class="lg-inner">
+<h2>The question most teams get wrong</h2>
+<p>Teams usually ask whether a given AI vendor is "GDPR compliant". That framing does not survive contact with the regulation. The GDPR does not certify products; it places obligations on the organisation that decides why and how personal data is processed. If your staff paste a customer's name, address and case history into a chat window, your organisation is the controller of that processing, whatever the vendor's marketing page says.</p>
+<p>The practical question is narrower and more useful: <strong>does personal data need to leave your building for this task to work?</strong> In most day-to-day AI use — drafting a reply, summarising a meeting, rewriting a document — the answer is no. The model needs the shape of the problem, not the identity of the person.</p>
+<h2>The four articles that actually bite</h2>
+<h3>Article 5 — data minimisation</h3>
+<p>You may only process personal data that is adequate, relevant and limited to what is necessary. Sending a full customer record to a model that only needs to rephrase two sentences fails this test before any other question is reached. Minimisation is the cheapest compliance win available, because it removes the problem rather than documenting it.</p>
+<h3>Article 28 — processors</h3>
+<p>If a cloud AI provider processes personal data on your instructions, it is a processor and you need a data processing agreement covering purpose, duration, sub-processors, security and deletion. Enterprise AI plans generally offer one. Consumer accounts, which is what most staff are actually using, generally do not.</p>
+<h3>Article 32 — security of processing</h3>
+<p>You must implement appropriate technical measures given the state of the art and the risk. Once local redaction is technically available and inexpensive, "we sent it in clear text because that was easier" becomes progressively harder to defend as appropriate.</p>
+<h3>Articles 44–49 — international transfers</h3>
+<p>Where the model runs matters. If inference happens outside the EEA, you need a valid transfer mechanism. If nothing identifying leaves the device, the transfer question largely dissolves — there is no personal data in the payload to transfer.</p>
+<h2>Accountability is the part people forget</h2>
+<p>Article 5(2) requires you to be able to demonstrate compliance. In an audit or a complaint, a policy document stating that staff should not paste personal data into AI tools is weak evidence. A log showing what was detected, what was redacted, when, and how long it took is strong evidence. The difference between the two is usually the difference between a short conversation with a regulator and a long one.</p>
+<h2>A workable position</h2>
+<ol>
+<li>Assume staff are already using AI tools, because they are.</li>
+<li>Redact identifying data on the device, before the prompt is sent, so the payload contains no personal data.</li>
+<li>Restore the real values locally in the reply, so the output is still usable.</li>
+<li>Log every event with a timestamp and an identifier you can search later.</li>
+<li>Keep an enterprise agreement in place for the residual cases where identifying data genuinely must be sent.</li>
+</ol>
+<p>This is the design Fairwall AI implements. Detection and redaction run on the user's own machine; the mapping between a placeholder and the real value never leaves it; and every protection event is written to a forensic audit trail you can search and export. <a href="index.html#demo">Try the live demo</a> to see the payload a model would actually receive.</p>
+<div class="art-cta">
+<h2 style="border:none;margin:0 0 8px;padding:0">See it on your own data.</h2>
+<p style="margin:0 0 16px">A 30-minute walkthrough of detection, redaction and restore on the kind of documents your team actually handles.</p>
+<a class="art-btn" href="book-demo.html">Book a demo</a>
+</div>
+<h2>Related reading</h2>
+<ul><li><a href="shadow-ai.html">Shadow AI: why most AI use is invisible to the organisation</a></li><li><a href="pii-redaction-explained.html">Reversible redaction, explained</a></li><li><a href="stop-data-leaks-ai.html">How to stop staff pasting client data into AI tools</a></li></ul>
+<p class="art-note">This article is general information, not legal advice. Fairwall AI is a brand and product of Data Dynamics AI FlexCo, Vienna, Austria.</p>
+</article></main>
+<footer class="lg-foot"><div class="lg-inner">
+<p>© 2026 Fairwall AI — a product of Data Dynamics AI FlexCo, Vienna.</p>
+<p><a href="index.html">Home</a> · <a href="insights.html">Insights</a> · <a href="impressum.html">Impressum</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></p>
+</div></footer>
+</body></html>

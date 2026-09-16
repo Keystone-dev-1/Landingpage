@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to stop staff pasting client data into AI tools — Fairwall AI</title>
+<meta name="description" content="Policies, training and domain blocks all fail for the same reason. A practical five-step approach to keeping client data out of AI prompts without slowing anyone down.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://www.fairwall.ai/stop-data-leaks-ai.html">
+<link rel="icon" href="./assets/logo-mark-new.png">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Fairwall AI"><meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://www.fairwall.ai/stop-data-leaks-ai.html">
+<meta property="og:title" content="How to stop staff pasting client data into AI tools"><meta property="og:description" content="Policies, training and domain blocks all fail for the same reason. A practical five-step approach to keeping client data out of AI prompts without slowing anyone down.">
+<meta property="og:image" content="https://www.fairwall.ai/assets/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to stop staff pasting client data into AI tools"><meta name="twitter:description" content="Policies, training and domain blocks all fail for the same reason. A practical five-step approach to keeping client data out of AI prompts without slowing anyone down."><meta name="twitter:image" content="https://www.fairwall.ai/assets/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"How to stop staff pasting client data into AI tools","description":"Policies, training and domain blocks all fail for the same reason. A practical five-step approach to keeping client data out of AI prompts without slowing anyone down.","inLanguage":"en","datePublished":"2026-09-10","dateModified":"2026-09-10","image":"https://www.fairwall.ai/assets/og-image.png","mainEntityOfPage":"https://www.fairwall.ai/stop-data-leaks-ai.html","author":{"@type":"Organization","name":"Fairwall AI","url":"https://www.fairwall.ai/"},"publisher":{"@type":"Organization","name":"Fairwall AI","logo":{"@type":"ImageObject","url":"https://www.fairwall.ai/assets/logo-mark-new.png"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fairwall.ai/"},{"@type":"ListItem","position":2,"name":"Insights","item":"https://www.fairwall.ai/insights.html"},{"@type":"ListItem","position":3,"name":"How to stop staff pasting client data into AI tools","item":"https://www.fairwall.ai/stop-data-leaks-ai.html"}]}]}</script>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="legal.css"><link rel="stylesheet" href="article.css"><script src="./analytics.js"></script></head>
+<body>
+<header class="lg-head">
+<a class="lg-logo" href="index.html"><img src="./assets/logo-mark-new.png" alt="Fairwall AI"><span class="lg-word">F<span>ai</span>rwall <span>AI</span></span></a>
+<nav class="lg-nav"><a href="index.html#tour">Product</a><a href="index.html#pricing">Pricing</a><a href="insights.html">Insights</a><a href="book-demo.html">Book a demo</a></nav>
+</header>
+<section class="lg-hero"><div class="lg-inner">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> / <a href="insights.html">Insights</a></nav>
+<p class="lg-eyebrow">Operations</p>
+<h1>How to stop staff pasting client data into AI tools</h1>
+<p>Every organisation that handles client data has the same problem and reaches for the same three failed remedies. Here is what to do instead.</p>
+</div></section>
+<main><article class="lg-inner">
+<h2>The three remedies that do not work</h2>
+<p><strong>A policy line.</strong> "Do not enter confidential information into AI tools." Everyone signs it. Nobody consults it at the moment of pasting, because the paste feels like a small, private act and the policy is a document read once during onboarding.</p>
+<p><strong>Training.</strong> Better than nothing, and it decays. Awareness training moves behaviour for a few weeks. The behaviour it is competing against saves someone twenty minutes, every day, forever.</p>
+<p><strong>Domain blocking.</strong> Moves the activity to unmanaged devices. You lose the logs, keep the exposure, and add friction that staff correctly perceive as the security team making their work harder.</p>
+<p>All three share an assumption: that the leak is a discipline problem. It is not. It is a design problem. The safe action is slower than the unsafe one, so the unsafe one wins.</p>
+<h2>Five steps that do work</h2>
+<h3>1. Decide what actually must never leave</h3>
+<p>Not everything is sensitive. Get specific: client names, contact details, account and case numbers, financial figures, health information, credentials and API keys. A short, concrete list is enforceable; "confidential information" is not.</p>
+<h3>2. Detect it where it is typed</h3>
+<p>Detection has to happen in the browser and in the desktop applications where staff actually work, at the moment of composition. A scanner that runs on an email gateway does not see a chat window.</p>
+<h3>3. Redact before the send, not after</h3>
+<p>Once the prompt has been transmitted, the exposure has already occurred; nothing downstream undoes it. Substitution has to happen locally, before transmission, with the real values replaced by placeholders.</p>
+<h3>4. Restore automatically so the output stays usable</h3>
+<p>This is the step that determines whether staff adopt it. If redaction returns a generic answer full of placeholders, people will bypass the tool to get a usable one. If the real names and figures are put back into the reply on the device, the user gets exactly the output they wanted and the model never saw the data. The safe path becomes the path of least resistance.</p>
+<h3>5. Log everything</h3>
+<p>Each event should record what type of entity was found, how many, when, and how long it took — with an identifier you can search. This is what converts an assurance into evidence, and it is what auditors, insurers and enterprise clients increasingly ask for.</p>
+<h2>What good looks like in practice</h2>
+<p>A support agent pastes a complaint containing a customer's name, email and a disputed amount. The sensitive values are highlighted as they appear. The agent can override any of them with one click. The model receives placeholders. The reply comes back with the placeholders in place, and the real values are restored locally before the agent reads it. The whole exchange adds roughly 68 milliseconds and one line to an audit log.</p>
+<p>Nobody had to remember a policy. <a href="index.html#demo">Try it on your own text</a>.</p>
+<div class="art-cta">
+<h2 style="border:none;margin:0 0 8px;padding:0">See it on your own data.</h2>
+<p style="margin:0 0 16px">A 30-minute walkthrough of detection, redaction and restore on the kind of documents your team actually handles.</p>
+<a class="art-btn" href="book-demo.html">Book a demo</a>
+</div>
+<h2>Related reading</h2>
+<ul><li><a href="shadow-ai.html">Shadow AI: why most AI use is invisible</a></li><li><a href="gdpr-chatgpt.html">Can you use ChatGPT under GDPR?</a></li><li><a href="ai-privacy-for-agencies.html">Who is liable when a client’s data reaches a model?</a></li></ul>
+<p class="art-note">This article is general information, not legal advice. Fairwall AI is a brand and product of Data Dynamics AI FlexCo, Vienna, Austria.</p>
+</article></main>
+<footer class="lg-foot"><div class="lg-inner">
+<p>© 2026 Fairwall AI — a product of Data Dynamics AI FlexCo, Vienna.</p>
+<p><a href="index.html">Home</a> · <a href="insights.html">Insights</a> · <a href="impressum.html">Impressum</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></p>
+</div></footer>
+</body></html>

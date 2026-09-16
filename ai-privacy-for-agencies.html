@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Who is liable when a client’s data reaches a model? — Fairwall AI</title>
+<meta name="description" content="AI agencies building automations for clients quietly take on processor obligations. What that means, and how to ship fast without owning your clients’ data risk.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://www.fairwall.ai/ai-privacy-for-agencies.html">
+<link rel="icon" href="./assets/logo-mark-new.png">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Fairwall AI"><meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://www.fairwall.ai/ai-privacy-for-agencies.html">
+<meta property="og:title" content="Who is liable when a client’s data reaches a model?"><meta property="og:description" content="AI agencies building automations for clients quietly take on processor obligations. What that means, and how to ship fast without owning your clients’ data risk.">
+<meta property="og:image" content="https://www.fairwall.ai/assets/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Who is liable when a client’s data reaches a model?"><meta name="twitter:description" content="AI agencies building automations for clients quietly take on processor obligations. What that means, and how to ship fast without owning your clients’ data risk."><meta name="twitter:image" content="https://www.fairwall.ai/assets/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Who is liable when a client’s data reaches a model?","description":"AI agencies building automations for clients quietly take on processor obligations. What that means, and how to ship fast without owning your clients’ data risk.","inLanguage":"en","datePublished":"2026-09-10","dateModified":"2026-09-10","image":"https://www.fairwall.ai/assets/og-image.png","mainEntityOfPage":"https://www.fairwall.ai/ai-privacy-for-agencies.html","author":{"@type":"Organization","name":"Fairwall AI","url":"https://www.fairwall.ai/"},"publisher":{"@type":"Organization","name":"Fairwall AI","logo":{"@type":"ImageObject","url":"https://www.fairwall.ai/assets/logo-mark-new.png"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fairwall.ai/"},{"@type":"ListItem","position":2,"name":"Insights","item":"https://www.fairwall.ai/insights.html"},{"@type":"ListItem","position":3,"name":"Who is liable when a client’s data reaches a model?","item":"https://www.fairwall.ai/ai-privacy-for-agencies.html"}]}]}</script>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="legal.css"><link rel="stylesheet" href="article.css"><script src="./analytics.js"></script></head>
+<body>
+<header class="lg-head">
+<a class="lg-logo" href="index.html"><img src="./assets/logo-mark-new.png" alt="Fairwall AI"><span class="lg-word">F<span>ai</span>rwall <span>AI</span></span></a>
+<nav class="lg-nav"><a href="index.html#tour">Product</a><a href="index.html#pricing">Pricing</a><a href="insights.html">Insights</a><a href="book-demo.html">Book a demo</a></nav>
+</header>
+<section class="lg-hero"><div class="lg-inner">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> / <a href="insights.html">Insights</a></nav>
+<p class="lg-eyebrow">Agencies</p>
+<h1>Who is liable when a client’s data reaches a model?</h1>
+<p>If you build AI automations for clients, their personal data flows through infrastructure you chose. That makes you a processor, with obligations most agencies have not priced in.</p>
+</div></section>
+<main><article class="lg-inner">
+<h2>The position agencies are in</h2>
+<p>An agency builds a workflow: a form submission arrives, a model classifies and drafts a response, a record is written to a CRM. The client's customers never hear of the agency. But the personal data passes through an orchestration layer the agency chose, calls model providers the agency selected, and is logged in places the agency configured.</p>
+<p>Under the GDPR that makes the agency a processor acting on the client's instructions, and processors have direct obligations — security measures, sub-processor transparency, breach notification, deletion on termination. Those obligations do not depend on whether anyone wrote a contract. They arrive with the role.</p>
+<h2>Three exposures that show up late</h2>
+<h3>Sub-processors nobody enumerated</h3>
+<p>A typical automation touches an orchestration platform, one or two model providers, a vector store, a transactional email service and a logging tool. Each is a sub-processor the client is entitled to know about and object to. Most agency contracts list none of them.</p>
+<h3>Logs as an unplanned data store</h3>
+<p>Workflow platforms retain execution data by default so you can debug. That means full prompt bodies — names, addresses, case details — sitting in a platform account, often indefinitely, usually outside any retention schedule the client agreed to. This is the single most common finding when an agency's client is audited.</p>
+<h3>Training and retention terms that change</h3>
+<p>Whether a provider trains on API traffic, and how long it retains it, is a contractual term that has moved more than once and will again. An agency that promised a client "your data is not used for training" on the basis of a page it read last year has made a commitment it does not control.</p>
+<h2>The structural fix</h2>
+<p>The reliable answer is not better contracts. It is arranging things so the personal data never enters the parts of the system you do not control.</p>
+<p>If identifying values are replaced with typed placeholders before the payload leaves the client's environment, and restored on the way back, then the model provider, the orchestration logs and any intermediate store contain no personal data. Retention terms stop being load-bearing. Sub-processor lists get shorter and truthful. A breach at a provider is not a breach of your client's data, because their data was never there.</p>
+<h2>What this changes commercially</h2>
+<p>Agencies that can demonstrate this win procurement conversations they used to lose. The security questionnaire from a regulated client stops being a two-week negotiation, because the honest answer to "what personal data is shared with your AI sub-processors?" becomes "none". A per-run audit log turns your assurances into evidence you can attach.</p>
+<p>Fairwall AI supports this directly: purpose-built n8n nodes put detection and restore inside the workflow, and white-label terms let agencies ship it as part of their own offering. <a href="index.html#pricing">See agency pricing</a> or <a href="book-demo.html">book a walkthrough</a>.</p>
+<div class="art-cta">
+<h2 style="border:none;margin:0 0 8px;padding:0">See it on your own data.</h2>
+<p style="margin:0 0 16px">A 30-minute walkthrough of detection, redaction and restore on the kind of documents your team actually handles.</p>
+<a class="art-btn" href="book-demo.html">Book a demo</a>
+</div>
+<h2>Related reading</h2>
+<ul><li><a href="gdpr-chatgpt.html">Can you use ChatGPT under GDPR?</a></li><li><a href="pii-redaction-explained.html">Reversible redaction, explained</a></li><li><a href="shadow-ai.html">Shadow AI: why most AI use is invisible</a></li></ul>
+<p class="art-note">This article is general information, not legal advice. Fairwall AI is a brand and product of Data Dynamics AI FlexCo, Vienna, Austria.</p>
+</article></main>
+<footer class="lg-foot"><div class="lg-inner">
+<p>© 2026 Fairwall AI — a product of Data Dynamics AI FlexCo, Vienna.</p>
+<p><a href="index.html">Home</a> · <a href="insights.html">Insights</a> · <a href="impressum.html">Impressum</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></p>
+</div></footer>
+</body></html>
