@@ -10,6 +10,28 @@
   status = 301
   force = true
 
+# Pretty URLs
+[[redirects]]
+  from = "/de"
+  to = "/index-de.html"
+  status = 200
+[[redirects]]
+  from = "/de/"
+  to = "/index-de.html"
+  status = 200
+[[redirects]]
+  from = "/en"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/demo"
+  to = "/book-demo.html"
+  status = 301
+[[redirects]]
+  from = "/pricing"
+  to = "/#pricing"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]
