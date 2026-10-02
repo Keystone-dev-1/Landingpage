@@ -14,9 +14,9 @@ function Locations(){
       <div>
         <h2 style={{fontFamily:'var(--font-display)',fontWeight:700,fontSize:'var(--text-h2)',color:'var(--navy-950)',margin:'0 0 20px'}}>{T.locationTitle}</h2>
         <div style={{borderRadius:'var(--radius-lg)',overflow:'hidden',border:'1px solid var(--border-default)'}}>
-          <iframe title="Fairwall AI HQ" width="100%" height="220" style={{border:0,display:'block'}} loading="lazy" src="https://maps.google.com/maps?q=Hadikgasse%2064%2C%201140%20Wien&z=15&output=embed"></iframe>
+          <iframe title="Fairwall AI HQ" width="100%" height="220" style={{border:0,display:'block'}} loading="lazy" src="https://maps.google.com/maps?q=Biraghigasse%2033%2C%201130%20Wien&z=15&output=embed"></iframe>
         </div>
-        <div style={{fontSize:13,color:'var(--text-secondary)',marginTop:10,fontFamily:'var(--font-mono)'}}>Hadikgasse 64, 1140 Wien</div>
+        <div style={{fontSize:13,color:'var(--text-secondary)',marginTop:10,fontFamily:'var(--font-mono)'}}>Biraghigasse 33, 1130 Wien</div>
       </div>
     </div>
   </section>;

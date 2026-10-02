@@ -17,8 +17,13 @@
   status = 200
 [[redirects]]
   from = "/en"
-  to = "/index.html"
-  status = 200
+  to = "/"
+  status = 301
+# /index.html is a duplicate of / — collapse it so Google only sees one URL
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
 [[redirects]]
   from = "/demo"
   to = "/book-demo.html"

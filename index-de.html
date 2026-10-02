@@ -1,4 +1,6 @@
-<!-- @dsCard group="Marketing Site" viewport="1200x900" name="Fairwall AI Website (DE)" subtitle="German version — same sections, German marketing copy" -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Fairwall AI — KI nutzen, ohne sensible Daten preiszugeben</title>
@@ -26,65 +28,343 @@
 <meta name="twitter:description" content="Sensible Daten lokal erkennen und schwärzen, bevor sie einen Cloud-KI-Dienst erreichen. Nichts gesendet. Nichts gespeichert. Nichts riskiert.">
 <meta name="twitter:image" content="https://www.fairwall.ai/assets/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.fairwall.ai/#org","name":"Fairwall AI","url":"https://www.fairwall.ai/","logo":"https://www.fairwall.ai/assets/og-image.png","email":"juan@ddynamics.ai","telephone":"+43 660 376 0055","parentOrganization":{"@type":"Organization","name":"Data Dynamics AI FlexCo","url":"https://www.ddynamics.ai"},"address":{"@type":"PostalAddress","streetAddress":"Biraghigasse 33","postalCode":"1130","addressLocality":"Vienna","addressCountry":"AT"}},{"@type":"WebSite","@id":"https://www.fairwall.ai/#site","url":"https://www.fairwall.ai/","name":"Fairwall AI","publisher":{"@id":"https://www.fairwall.ai/#org"},"inLanguage":"de"},{"@type":"SoftwareApplication","name":"Fairwall AI","applicationCategory":"SecurityApplication","operatingSystem":"Windows, macOS, Chrome, Edge","description":"Privacy layer that detects and redacts sensitive data locally before prompts reach a cloud AI service, and restores it in the reply.","publisher":{"@id":"https://www.fairwall.ai/#org"},"offers":{"@type":"Offer","price":"8.50","priceCurrency":"EUR"}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Was ist Fairwall AI?","acceptedAnswer":{"@type":"Answer","text":"Fairwall AI ist eine Privatsphäre-Schicht für die KI-Nutzung. Sensible Daten werden auf deinem Gerät erkannt und geschwärzt, bevor ein Prompt ein Cloud-KI-Tool wie ChatGPT, Claude oder Gemini erreicht. In der Antwort werden die echten Werte wieder eingesetzt, damit sie nutzbar bleibt."}},{"@type":"Question","name":"Verlassen meine Daten mein Gerät?","acceptedAnswer":{"@type":"Answer","text":"Nein. Erkennung, Redaktion und Wiederherstellung laufen lokal. Die Zuordnung zwischen Platzhalter und echtem Wert verlässt dein Gerät nie. Nichts gesendet. Nichts gespeichert. Nichts riskiert."}},{"@type":"Question","name":"Mit welchen KI-Tools funktioniert es?","acceptedAnswer":{"@type":"Answer","text":"Mit jedem KI-Tool im Browser über das Browser-Plug-in. Lokale Anwendungen deckt die Desktop-Proxy-Schicht ab, Automatisierungen laufen über eigens gebaute n8n-Nodes."}},{"@type":"Question","name":"Ist Fairwall AI DSGVO-konform?","acceptedAnswer":{"@type":"Answer","text":"Es ist für DSGVO-, HIPAA- und PCI-DSS-Abläufe gebaut. Jedes Schutzereignis wird mit forensischer ID, Zeitstempel und Latenzwert protokolliert, und der komplette Audit-Trail lässt sich durchsuchen und herunterladen. Fairwall AI ist ein Produkt der Data Dynamics AI FlexCo in Wien, Österreich; die Daten bleiben in der EU."}},{"@type":"Question","name":"Was kostet Fairwall AI?","acceptedAnswer":{"@type":"Answer","text":"Einzelpläne starten bei 8,50 € pro Monat, mit 30% Rabatt bei jährlicher Zahlung und 15 Tagen kostenlos. Rollouts für Unternehmen und KI-Agenturen werden pro Deployment kalkuliert — buche eine Demo, wir klären es im Gespräch."}},{"@type":"Question","name":"Bremst es meine KI aus?","acceptedAnswer":{"@type":"Answer","text":"Der typische Latenz-Overhead liegt bei rund 68 Millisekunden, im Alltag ist die Verzögerung also nicht spürbar."}},{"@type":"Question","name":"Lässt sich die Schwärzung rückgängig machen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Die Redaktion ist von Grund auf umkehrbar: Platzhalter werden lokal zugeordnet und die echten Werte automatisch wieder in die KI-Antwort eingesetzt."}}]}</script>
-<script>window.SITE_LANG='de';document.documentElement.lang='de'</script>
-<script src="./i18n.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Was ist Fairwall AI?","acceptedAnswer":{"@type":"Answer","text":"Fairwall AI ist eine Privatsphäre-Schicht für die KI-Nutzung. Sensible Daten werden auf deinem Gerät erkannt und geschwärzt, bevor ein Prompt ein Cloud-KI-Tool wie ChatGPT, Claude oder Gemini erreicht. In der Antwort werden die echten Werte wieder eingesetzt, damit sie nutzbar bleibt."}},{"@type":"Question","name":"Verlassen meine Daten mein Gerät?","acceptedAnswer":{"@type":"Answer","text":"Nein. Erkennung, Redaktion und Wiederherstellung laufen lokal. Die Zuordnung zwischen Platzhalter und echtem Wert verlässt dein Gerät nie. Nichts gesendet. Nichts gespeichert. Nichts riskiert."}},{"@type":"Question","name":"Mit welchen KI-Tools funktioniert es?","acceptedAnswer":{"@type":"Answer","text":"Mit jedem KI-Tool im Browser über das Browser-Plug-in. Lokale Anwendungen deckt die Desktop-Proxy-Schicht ab, Automatisierungen laufen über eigens gebaute n8n-Nodes."}},{"@type":"Question","name":"Ist Fairwall AI DSGVO-konform?","acceptedAnswer":{"@type":"Answer","text":"Es ist für DSGVO-, HIPAA- und PCI-DSS-Abläufe gebaut. Jedes Schutzereignis wird mit forensischer ID, Zeitstempel und Latenzwert protokolliert, und der komplette Audit-Trail lässt sich durchsuchen und herunterladen. Fairwall AI ist ein Produkt der Data Dynamics AI FlexCo in Wien, Österreich; die Daten bleiben in der EU."}},{"@type":"Question","name":"Was kostet Fairwall AI?","acceptedAnswer":{"@type":"Answer","text":"Einzelpläne starten bei 8,50 € pro Monat bei jährlicher Zahlung (30 % Rabatt auf den Monatspreis von 12 €), mit 15 Tagen kostenlos. Rollouts für Unternehmen und KI-Agenturen werden pro Deployment kalkuliert — buche eine Demo, wir klären es im Gespräch."}},{"@type":"Question","name":"Bremst es meine KI aus?","acceptedAnswer":{"@type":"Answer","text":"Der typische Latenz-Overhead liegt bei rund 68 Millisekunden, im Alltag ist die Verzögerung also nicht spürbar."}},{"@type":"Question","name":"Lässt sich die Schwärzung rückgängig machen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Die Redaktion ist von Grund auf umkehrbar: Platzhalter werden lokal zugeordnet und die echten Werte automatisch wieder in die KI-Antwort eingesetzt."}}]}</script>
+<script>window.SITE_LANG='de'</script>
 <script src="./analytics.js"></script>
+
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="./responsive.css">
+<style>
+:root{--ink:var(--navy-950);--g:var(--brand-green);--paper:#f4f6f8}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--teal-600)}a:hover{color:var(--ink)}
+.g{color:var(--teal-600)}.dk .g{color:var(--g)}
+.wrap{max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.disp{font-family:var(--font-display);font-weight:800;letter-spacing:-.04em;line-height:.9;margin:0}
+.over{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-500)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:50px;padding:0 24px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none!important;border:0;cursor:pointer;font-family:inherit;transition:transform .25s cubic-bezier(.2,.8,.2,1),background .2s,box-shadow .2s}
+.btn:active{transform:scale(.97)}
+.btn-n{background:var(--ink);color:var(--white)!important}.btn-n:hover{background:var(--navy-700)}
+.btn-g{background:var(--g);color:var(--ink)!important}.btn-g:hover{background:var(--teal-400)}
+.btn-o{background:none;box-shadow:inset 0 0 0 1px var(--slate-300);color:var(--ink)!important}.btn-o:hover{box-shadow:inset 0 0 0 1px var(--ink)}
+.btn[disabled]{opacity:.35;pointer-events:none}
+nav.top{position:sticky;top:0;z-index:50;background:rgba(244,246,248,.85);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+nav.top.s{border-color:var(--slate-200)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:800;font-size:20px;color:var(--ink)!important;text-decoration:none!important}
+.logo img{width:30px;height:30px;object-fit:contain}
+.links{display:flex;gap:30px;font-size:15px}.links a{color:var(--slate-700)}.links a:hover{color:var(--ink);text-decoration:none}
+.navr{display:flex;align-items:center;gap:14px}.navr .btn{height:40px;padding:0 18px;font-size:14px;border-radius:10px}
+.lang{font-family:var(--font-mono);font-size:12px;color:var(--slate-500)}
+/* hero */
+.hero{padding:clamp(48px,7vw,96px) 0 clamp(64px,8vw,112px)}
+.hgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.hero h1{font-size:clamp(44px,5.6vw,96px)}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}.hero h1 .ln>span{display:block;transform:translateY(105%);animation:up 1s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.1s}.hero h1 .ln:nth-child(3)>span{animation-delay:.2s}
+@keyframes up{to{transform:none}}@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.hero .lead{font-size:clamp(17px,1.35vw,20px);line-height:1.55;color:var(--slate-700);max-width:520px;margin:32px 0;animation:fade .8s .4s both}
+.hero .lead b{color:var(--teal-600);font-weight:600}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;animation:fade .8s .5s both}
+/* workbench */
+.bench{background:var(--white);border-radius:24px;box-shadow:0 1px 0 var(--slate-200),0 30px 80px -30px rgba(8,14,25,.28);overflow:hidden;animation:fade 1s .3s both}
+.bench .hd{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--slate-100);font-size:13px;color:var(--slate-500)}
+.tbar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--slate-100)}
+.tbar i{width:10px;height:10px;border-radius:50%;background:var(--slate-300)}
+.tbar .tab{margin-left:10px;background:var(--white);border-radius:8px 8px 0 0;padding:6px 14px;font-size:12px;color:var(--slate-700);margin-bottom:-10px;padding-bottom:12px}
+.ubar{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--slate-100)}
+.ubar .u{flex:1;min-width:0;background:var(--slate-50);border-radius:99px;padding:7px 14px;font-family:var(--font-mono);font-size:12px;color:var(--slate-700);overflow:hidden;white-space:nowrap}
+.ubar .u span{display:inline-block;transition:opacity .3s,transform .3s}.ubar .u span.sw{opacity:0;transform:translateY(-6px)}
+.ubar .ext{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--teal-100)}.ubar .ext img{width:18px;height:18px;object-fit:contain}
+.composer{position:relative;border:1px solid var(--slate-200);border-radius:18px;padding:14px 16px 40px;transition:border-color .2s,box-shadow .2s}
+.composer:focus-within{border-color:var(--slate-300);box-shadow:0 0 0 4px var(--slate-100)}
+.fwb{position:absolute;right:12px;bottom:12px;display:flex;align-items:center;gap:7px;padding:5px 10px 5px 6px;border-radius:99px;background:var(--white);color:var(--ink);font-size:12px;font-weight:600;transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+.fwb img{width:18px;height:18px;object-fit:contain}
+.fwb b{color:var(--teal-600);font-weight:700}
+.fwb.pop{transform:scale(1.08)}
+.composer .hint{position:absolute;left:16px;bottom:15px;font-size:12px;color:var(--slate-400)}
+.works{margin-top:28px;display:flex;flex-direction:column;gap:10px;animation:fade .8s .6s both}
+.works .l{font-size:14px;color:var(--slate-500)}
+.works .ts{display:flex;flex-wrap:wrap;gap:6px 18px}
+.works .ts span{font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:-.01em;color:var(--slate-400);transition:color .3s}
+.works .ts span.on{color:var(--ink)}
+.works .n{font-size:14px;font-weight:600;color:var(--teal-600)}
+.bench .hd b{font-family:var(--font-mono);font-weight:500;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.tabs{display:flex;gap:4px}.tabs button{font:inherit;font-size:12px;padding:6px 10px;border-radius:8px;border:0;background:none;color:var(--slate-500);cursor:pointer}.tabs button.on{background:var(--slate-100);color:var(--ink)}
+.pane{padding:18px 20px}
+.pane label{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate-500);margin-bottom:8px}
+.ed{position:relative;font-size:16px;line-height:1.65}
+.ed textarea,.ed .mir{font:inherit;line-height:inherit;margin:0;padding:0;border:0;width:100%;min-height:104px;white-space:pre-wrap;word-wrap:break-word}
+.ed textarea{position:absolute;inset:0;background:none;color:transparent;caret-color:var(--ink);resize:none;outline:none}
+.ed .mir{color:var(--ink);pointer-events:none}
+mark{background:none;color:inherit}
+mark.pii{background:rgba(239,68,68,.14);box-shadow:inset 0 -2px var(--red-500);border-radius:3px;color:var(--red-600)}
+.out{background:var(--ink);color:var(--white);border-radius:0;padding:18px 20px 56px;font-size:15px;line-height:1.65;white-space:pre-wrap;min-height:120px;position:relative}
+.out label{color:var(--slate-400)}
+mark.ph{color:var(--g);background:rgba(32,201,146,.12);border-radius:4px;padding:0 4px;font-family:var(--font-mono);font-size:.88em;display:inline-block;animation:flip .45s cubic-bezier(.2,.8,.2,1) both}
+@keyframes flip{from{transform:rotateX(90deg);opacity:0}to{transform:none;opacity:1}}
+mark.back{color:var(--g);box-shadow:inset 0 -2px var(--g);animation:fade .5s both}
+.meter{display:flex;gap:6px;flex-wrap:wrap;min-height:24px;margin-top:10px}
+.chip{font-family:var(--font-mono);font-size:11px;padding:4px 8px;border-radius:6px;background:var(--red-100);color:var(--red-600);animation:fade .3s both}
+.out .chip{background:rgba(32,201,146,.14);color:var(--g)}
+.act{display:flex;gap:10px;align-items:center;padding:14px 20px;background:var(--navy-900);border-top:1px solid var(--navy-800)}
+.act .btn{height:42px;font-size:14px;border-radius:10px}
+.act .lat{margin-left:auto;font-family:var(--font-mono);font-size:11px;color:var(--slate-400)}
+.flow{display:flex;gap:6px;align-items:center;padding:0 20px 14px;background:var(--navy-900);font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate-500)}
+.flow span{padding:4px 8px;border-radius:99px;border:1px solid var(--navy-700);transition:all .3s}.flow span.on{border-color:var(--g);color:var(--g)}
+.flow i{flex:1;height:1px;background:var(--navy-700);font-style:normal}
+/* band */
+.dk{background:var(--ink);color:var(--white)}
+.band{padding:clamp(96px,12vw,180px) 0}
+.bgrid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:end}
+.big{font-family:var(--font-display);font-weight:800;font-size:clamp(96px,14vw,230px);letter-spacing:-.06em;line-height:.8;color:var(--g);white-space:nowrap}
+.band p.s{font-family:var(--font-display);font-weight:700;font-size:clamp(28px,3.2vw,48px);letter-spacing:-.025em;line-height:1.08;margin:0}
+.band .nl{margin-top:48px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--navy-700)}
+.band .nl div{padding:22px 16px 0 0;font-family:var(--font-display);font-weight:700;font-size:clamp(18px,1.6vw,24px);letter-spacing:-.01em}
+.band .nl div:last-child{color:var(--g)}
+/* sections */
+section.s{padding:clamp(96px,11vw,160px) 0}
+.sh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:end;margin-bottom:56px}
+.h2{font-size:clamp(44px,6vw,96px)}
+.sh p{font-size:clamp(17px,1.35vw,20px);color:var(--slate-700);line-height:1.55;margin:0;max-width:520px;justify-self:end}
+.pgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:var(--slate-200);border-radius:24px;overflow:hidden}
+.pc{background:var(--white);padding:clamp(28px,3.4vw,48px);min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:32px;transition:background .35s}
+.pc:hover{background:var(--ink);color:var(--white)}.pc:hover p{color:var(--slate-300)}.pc:hover .n{color:var(--g)}
+.pc .n{font-family:var(--font-mono);font-size:13px;color:var(--slate-400);transition:color .35s}
+.pc h3{margin:0 0 12px;font-size:clamp(28px,2.6vw,40px);letter-spacing:-.025em;line-height:1.05}
+.pc p{margin:0;color:var(--slate-700);font-size:16px;line-height:1.6;max-width:480px;transition:color .35s}
+.dep{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.dc{border-radius:24px;padding:32px;min-height:340px;display:flex;flex-direction:column;justify-content:space-between;background:var(--white);box-shadow:0 1px 0 var(--slate-200);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+.dc:hover{transform:translateY(-8px);box-shadow:0 30px 60px -30px rgba(8,14,25,.3)}
+.dc:nth-child(2){background:var(--ink);color:var(--white)}.dc:nth-child(2) p{color:var(--slate-300)}
+.dc:nth-child(3){background:var(--g)}.dc:nth-child(3) p,.dc:nth-child(3) .tag{color:var(--navy-800)}
+.dc .k{font-family:var(--font-mono);font-size:13px;opacity:.6}
+.dc .ic{width:72px;height:72px;border-radius:18px;display:grid;place-items:center;background:var(--slate-100);color:var(--ink)}
+.dc:nth-child(2) .ic{background:var(--navy-800);color:var(--g)}.dc:nth-child(3) .ic{background:rgba(8,14,25,.1)}
+.dc .ic svg{width:36px;height:36px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dc .top{display:flex;justify-content:space-between;align-items:flex-start}
+.src{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:var(--slate-400);margin-top:18px}.src a{color:var(--slate-300);text-decoration:underline}
+.book{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:clamp(24px,4vw,64px);margin-top:56px;text-align:left;align-items:start}
+.cal{background:var(--white);border-radius:24px;overflow:hidden;min-height:720px}.cal iframe{width:100%;height:720px;border:0;display:block}
+.office{border:1px solid var(--navy-700);border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
+.office iframe{width:100%;flex:1;min-height:320px;border:0;display:block;filter:grayscale(.6) contrast(1.05)}
+.office .ad{padding:24px 26px;display:flex;flex-direction:column;gap:6px}
+.office .ad b{font-family:var(--font-display);font-size:22px}
+.office .ad span{color:var(--slate-300);font-size:15px}
+.bl{list-style:none;padding:0;margin:0 0 4px;display:flex;flex-direction:column;gap:8px;color:var(--slate-300);font-size:15px}.bl li::before{content:"✓  ";color:var(--g)}
+.dc h3{margin:0 0 8px;font-size:30px;letter-spacing:-.02em}.dc p{margin:0;color:var(--slate-700);line-height:1.55}
+.tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate-500);margin-top:16px}
+.seg{display:inline-flex;background:var(--white);border-radius:12px;padding:4px;box-shadow:0 1px 0 var(--slate-200)}
+.seg button{font:inherit;font-size:15px;padding:10px 18px;border-radius:9px;border:0;background:none;color:var(--slate-700);cursor:pointer;transition:all .25s}
+.seg button.on{background:var(--ink);color:var(--white)}
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:28px}
+.tier{background:var(--white);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:18px;box-shadow:0 1px 0 var(--slate-200);animation:fade .45s both}
+.tier:nth-child(2){animation-delay:.06s}.tier:nth-child(3){animation-delay:.12s}
+.tier.hl{background:var(--ink);color:var(--white)}
+.tier .nm{display:flex;justify-content:space-between;align-items:center}.tier .nm b{font-family:var(--font-display);font-size:24px}
+.tier .pop{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;background:var(--g);color:var(--ink);padding:4px 8px;border-radius:99px}
+.tier .pr{font-family:var(--font-display);font-weight:800;font-size:56px;letter-spacing:-.045em;line-height:1}.tier .pr small{font-size:15px;font-weight:500;letter-spacing:0;color:var(--slate-500)}
+.tier ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.45}
+.tier li{display:grid;grid-template-columns:18px 1fr;gap:8px}.tier li::before{content:"✓";color:var(--teal-600);font-weight:700}.tier.hl li::before{color:var(--g)}
+.tier .grp{font-size:13px;color:var(--slate-500);margin-bottom:-6px}.tier.hl .grp{color:var(--slate-400)}
+.tier .btn{margin-top:auto}.tier.hl .btn-o{box-shadow:inset 0 0 0 1px var(--navy-600);color:var(--white)!important}
+.road{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.road>div{border-top:3px solid var(--slate-300);padding-top:24px}
+.road>div:first-child{border-color:var(--teal-600)}.road>div:nth-child(2){border-color:var(--amber-500)}
+.road h3{margin:6px 0 0;font-size:32px;letter-spacing:-.02em}.road .w{font-family:var(--font-mono);font-size:12px;color:var(--slate-500);letter-spacing:.1em;text-transform:uppercase}
+.road ul{padding:0;list-style:none;margin:20px 0 0;display:flex;flex-direction:column;gap:10px;color:var(--slate-700)}
+.faq details{border-top:1px solid var(--slate-200);padding:24px 0}.faq details:last-child{border-bottom:1px solid var(--slate-200)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;font-family:var(--font-display);font-weight:700;font-size:clamp(20px,2vw,26px);letter-spacing:-.01em}
+.faq summary::after{content:"+";color:var(--teal-600);transition:transform .3s}.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{color:var(--slate-700);font-size:17px;line-height:1.6;max-width:760px;margin:14px 0 0}
+.cta{padding:clamp(112px,14vw,200px) 0}
+.cta .disp{font-size:clamp(52px,9vw,150px)}
+.cta .ctas{margin-top:48px}
+footer{padding:72px 0 32px;color:var(--slate-400);font-size:14px;border-top:1px solid var(--navy-800)}
+.fgrid{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr)) minmax(0,1.4fr);gap:32px}
+.fgrid h4{font-family:var(--font-mono);font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-500);margin:0 0 16px}
+.fgrid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.fgrid a{color:var(--slate-300)}.fgrid a:hover{color:var(--white);text-decoration:none}
+.fmap{border-radius:14px;overflow:hidden;border:1px solid var(--navy-700);height:140px}.fmap iframe{width:100%;height:100%;border:0;display:block}
+.fbot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:56px;padding-top:24px;border-top:1px solid var(--navy-800);font-size:13px}
+.fbot a{color:var(--slate-400)}
+.tourwrap{overflow-x:auto;border-radius:24px}
+#tour-root>section{padding:0!important;background:none!important}
+#tour-root>section>div{max-width:none!important;min-width:880px}
+#tour-root h2,#tour-root h2+p,#tour-root>section>div>div:nth-of-type(3){display:none!important}
+#tour-root>section>div>div:first-of-type{border-radius:14px!important;margin-bottom:20px!important}
+#tour-root>section>div>div:nth-of-type(2){border-radius:24px!important;box-shadow:0 40px 100px -40px rgba(8,14,25,.45)!important;height:640px;position:relative}
+#tour-root>section>div>div:nth-of-type(2)>div:last-child{overflow:hidden;min-width:0}
+#tour-root>section>div>div:nth-of-type(2)::after{content:"";position:absolute;left:64px;right:0;bottom:0;height:72px;background:linear-gradient(transparent,var(--navy-950));pointer-events:none}
+@keyframes pulseLeft{0%,100%{transform:translateX(0)}50%{transform:translateX(-3px)}}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+@media (max-width:960px){
+.links{display:none}.hgrid,.bgrid,.sh{grid-template-columns:1fr}.sh p{justify-self:start}
+.pgrid,.dep,.tiers,.road,.book{grid-template-columns:1fr}.fgrid{grid-template-columns:1fr 1fr}.fgrid>div:first-child,.fgrid>div:last-child{grid-column:1/-1}.band .nl{grid-template-columns:1fr 1fr}.cal iframe{height:640px}.cal{min-height:640px}
+.act{flex-wrap:wrap}.act .lat{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 .ln>span{transform:none}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav class="top" id="nav"><div class="wrap">
+<a class="logo" href="#"><img src="assets/logo-mark-new.png" alt=""><span>F<span class="g">ai</span>rwall <span class="g">AI</span></span></a>
+<div class="links"><a href="#try">Ausprobieren</a><a href="#why">Warum</a><a href="#pricing">Preise</a><a href="#faq">FAQ</a></div>
+<div class="navr"><a class="lang" href="index.html">DE / EN</a><a class="btn btn-n" href="#book">Demo buchen</a></div>
+</div></nav>
+<main>
+
+<header class="hero" id="try"><div class="wrap hgrid">
+<div>
+<div class="over" style="margin-bottom:24px;animation:fade .6s both">Lokale Privatsphäre-Schicht für KI</div>
+<h1 class="disp"><span class="ln"><span>Privatsphäre</span></span><span class="ln"><span>im Zeitalter</span></span><span class="ln"><span class="g">der KI.</span></span></h1>
+<p class="lead"><span style="font-weight:600;color:var(--ink)">F<span class="g">ai</span>rwall <span class="g">AI</span></span> steht zwischen dir und jedem KI-Tool und erkennt sensible Daten, bevor sie dein Gerät verlassen. <b>Nichts gesendet. Nichts gespeichert. Nichts riskiert. Alles lokal.</b></p>
+<div class="ctas"><a class="btn btn-n" href="#book">Demo buchen →</a><a class="btn btn-o" href="#pricing">Preise ansehen</a></div>
+<div class="works"><span class="l">Funktioniert in den Tools, die du schon nutzt:</span><div class="ts" id="works"><span class="on">ChatGPT</span><span>Claude</span><span>Gemini</span><span>Copilot</span><span>Perplexity</span><span>Mistral</span></div><span class="n">Keine neue App. Keine neue Oberfläche.</span></div>
+</div>
+<div class="bench" aria-label="Interaktive Demo">
+<div class="tbar"><i></i><i></i><i></i><span class="tab">Neuer Chat</span></div>
+<div class="ubar"><span class="u"><span id="url">chatgpt.com</span></span><span class="ext" title="Fairwall AI plug-in"><img src="assets/logo-mark-new.png" alt="Fairwall AI plug-in"></span></div>
+<div class="hd"><b>Probier es aus · tippe deinen eigenen Text</b><div class="tabs" id="tabs"></div></div>
+<div class="pane"><div class="composer"><div class="ed"><div class="mir" id="mir"></div><textarea id="ta" spellcheck="false" aria-label="Nachricht"></textarea></div><span class="hint">Nachricht an ein beliebiges KI-Tool</span></div>
+<div class="meter" id="meter"></div></div>
+<div class="out"><label><span id="outl">What ChatGPT receives</span><span id="outs">Auf deinem Gerät geschwärzt</span></label><div id="out"></div><span class="fwb" id="fwb"><img src="assets/logo-mark-new.png" alt=""><span><b id="cnt">0</b> geschützt</span></span></div>
+<div class="act"><button class="btn btn-g" id="send">Senden</button><button class="btn btn-o" id="rest" style="box-shadow:inset 0 0 0 1px var(--navy-600);color:var(--white)!important" disabled>Werte wiederherstellen</button><span class="lat" id="lat">0 ms · lokal</span></div>
+<div class="flow" id="flow"><span class="on">Erkennen</span><i></i><span>Schwärzen</span><i></i><span>Senden</span><i></i><span>Wiederherstellen</span></div>
+</div>
+</div></header>
+
+<section class="dk band"><div class="wrap">
+<div class="bgrid"><div class="big rv" id="big">39,7 %</div><div class="rv"><p class="s">der KI-Interaktionen legen sensible Daten offen. Jeder Prompt kann einen Namen, eine IBAN oder ein Gehalt enthalten.</p><div class="src">Quelle: Cyberhaven, 2026 AI Adoption &amp; Risk Report</div></div></div>
+<div class="nl rv"><div>Nichts gesendet.</div><div>Nichts gespeichert.</div><div>Nichts riskiert.</div><div>Alles lokal.</div></div>
+</div></section>
+
+<section class="s" id="why"><div class="wrap">
+<div class="sh"><h2 class="disp h2 rv">Warum <span style="white-space:nowrap">F<span class="g">ai</span>rwall <span class="g">AI</span></span>.</h2><p class="rv">Vier Prinzipien hinter jeder Schwärzung.</p></div>
+<div class="pgrid rv">
+<div class="pc"><div class="n">01</div><div><h3>Sichtbar, nicht unsichtbar.</h3><p>Jede sensible Information wird markiert, sobald du sie eintippst — du siehst genau, was geschützt wird, statt eines stillen Prozesses im Hintergrund.</p></div></div>
+<div class="pc"><div class="n">02</div><div><h3>Immer deine Entscheidung.</h3><p>Die Erkennung schlägt vor, entscheidet aber nie für dich. Alles Markierte kannst du mit einem Klick als privat kennzeichnen — oder eben nicht, bevor es irgendwohin gesendet wird.</p></div></div>
+<div class="pc"><div class="n">03</div><div><h3>Geschützt, bevor es rausgeht.</h3><p>Schwärzung und Verschlüsselung passieren auf deinem Gerät, bevor die Nachricht ein KI-Tool erreicht — nicht danach, nicht unterwegs.</p></div></div>
+<div class="pc"><div class="n">04</div><div><h3>Belegbar, nicht versprochen.</h3><p>Jedes Schutzereignis wird mit forensischer ID, Zeitstempel und Latenzwert protokolliert — aus „vertrau uns“ wird ein Nachweis, den du durchsuchen kannst.</p></div></div>
+</div>
+</div></section>
+
+<section class="s" style="padding-top:0"><div class="wrap">
+<div class="sh"><h2 class="disp h2 rv">Eine Datenschutzebene, überall.</h2><p class="rv">Drei Wege, Fairwall AI auszurollen — je nachdem, wo deine KI-Nutzung passiert.</p></div>
+<div class="dep">
+<div class="dc rv"><div class="top"><div class="ic"><svg viewBox="0 0 32 32"><rect x="3" y="5" width="26" height="22" rx="3"></rect><path d="M3 11h26"></path><circle cx="7" cy="8" r=".6"></circle><circle cx="10" cy="8" r=".6"></circle><path d="M16 15l5 2v3c0 2.5-2.2 4-5 5-2.8-1-5-2.5-5-5v-3z"></path></svg></div><div class="k">01</div></div><div><h3>Browser</h3><p>Schützt jedes KI-Tool, automatisch.</p><div class="tag">Plug-in</div></div></div>
+<div class="dc rv"><div class="top"><div class="ic"><svg viewBox="0 0 32 32"><rect x="3" y="5" width="26" height="17" rx="2.5"></rect><path d="M12 27h8M16 22v5"></path><path d="M9 11h6M9 15h10M20 11h3"></path></svg></div><div class="k g">02</div></div><div><h3>Desktop</h3><p>Deckt alle Daten- und Medientypen ab.</p><div class="tag">Proxy-Ebene · lokale Apps</div></div></div>
+<div class="dc rv"><div class="top"><div class="ic"><svg viewBox="0 0 32 32"><rect x="3" y="6" width="8" height="7" rx="2"></rect><rect x="21" y="6" width="8" height="7" rx="2"></rect><rect x="12" y="20" width="8" height="7" rx="2"></rect><path d="M11 9.5h10M7 13v3a2 2 0 0 0 2 2h3.5M25 13v3a2 2 0 0 1-2 2h-3.5"></path></svg></div><div class="k">03</div></div><div><h3>Workflows</h3><p>Eigens gebaute n8n-Nodes für Automatisierung.</p><div class="tag">n8n node · REST API</div></div></div>
+</div>
+</div></section>
+
+<section class="s" id="product" style="padding-top:0"><div class="wrap">
+<div class="sh"><h2 class="disp h2 rv">Im Produkt.</h2><p class="rv">Das Fairwall AI Dashboard: hier übernimmst du die Kontrolle über deine KI-Privatsphäre. Klick dich durch die Bereiche.</p></div>
+<div class="tourwrap rv"><div id="tour-root"><ul style="list-style:none;padding:0;margin:0;display:grid;gap:12px"><li><b>Mission Control</b>: Vollständiger Überblick über alle Sitzungen und Logs, mit herunterladbarem Audit für jede an die KI gesendete Nachricht.</li><li><b>Detection Engines &amp; Rules</b>: Lege fest, welche Erkennungs-Engines laufen, definiere deine Regeln und sieh, welche gerade aktiv sind.</li><li><b>API Keys</b>: Verbinde Nodes und n8n-Workflows ohne Umwege.</li><li><b>Projects</b>: Trenne und organisiere deine Nutzer und Konversationen.</li><li><b>Forensic Audit Trail</b>: Durchsuche vergangene Audits.</li></ul></div></div>
+</div></section>
+
+<section class="s" id="pricing" style="padding-top:0"><div class="wrap">
+<div class="sh"><h2 class="disp h2 rv">Preise nach Segment.</h2><p class="rv">Wähle dein Segment und sieh, was in jeder Stufe enthalten ist.</p></div>
+<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center"><div class="seg" id="seg"><button class="on" data-k="Individuals">Privatpersonen</button><button data-k="Corporates">Unternehmen</button><button data-k="AI Agencies">KI-Agenturen</button></div><div class="seg" id="bill"><button class="on" data-b="monthly">Monatlich</button><button data-b="yearly">Jährlich <span style="color:var(--teal-600);font-weight:600">−30%</span></button></div></div>
+<div class="tiers" id="tiers"><div class="tier "><div class="nm"><b>Basic</b></div><div><div class="pr">€12<small> /Monat</small></div></div><div class="grp">Für KI im Browser:</div><ul><li>Desktop-App</li><li>Plug-ins</li></ul><a class="btn btn-o" href="checkout.html">Kostenlos testen</a></div><div class="tier hl"><div class="nm"><b>Medium</b><span class="pop">AM HÄUFIGSTEN</span></div><div><div class="pr">€14<small> /Monat</small></div></div><div class="grp" style="font-weight:600">Alles aus Basic, plus:</div><div class="grp">Für KI in jeder App:</div><ul><li>Proxy-Ebene für lokale Apps</li><li>Multimodale Unterstützung für PDF, Audio, Bild und Video</li></ul><a class="btn btn-g" href="checkout.html">Kostenlos testen</a></div><div class="tier "><div class="nm"><b>Advanced</b></div><div><div class="pr">€17<small> /Monat</small></div></div><div class="grp" style="font-weight:600">Alles aus Medium, plus:</div><div class="grp">Für KI in Workflows:</div><ul><li>Node für KI-Workflows (n8n)</li></ul><a class="btn btn-o" href="checkout.html">Kostenlos testen</a></div></div>
+<p style="color:var(--slate-500);font-size:14px;margin-top:20px" id="pnote">Jährliche Zahlung spart 30 %. 15 Tage kostenlos testen.</p>
+</div></section>
+
+<section class="s" style="padding-top:0"><div class="wrap">
+<div class="sh"><h2 class="disp h2 rv">Roadmap.</h2><p class="rv">Was fertig ist, was als Nächstes kommt.</p></div>
+<div class="road rv">
+<div><div class="w">Ausgeliefert</div><h3>Jetzt</h3><ul><li>Desktop-App + Plug-in</li><li>Engine für Text-Schwärzung</li><li>Forensischer Audit-Trail</li></ul></div>
+<div><div class="w">Q4 2026</div><h3>Als Nächstes</h3><ul><li>Unternehmens-Dashboard</li><li>n8n-Workflow-Node</li><li>Proxy-Ebene für lokale Apps</li><li>Weniger Installationsaufwand</li></ul></div>
+<div><div class="w">2027</div><h3>Später</h3><ul><li>PDF- &amp; Audio-Schwärzung</li><li>Bild-/Video-Schwärzung</li><li>SOC-2-Zertifizierung</li><li>On-Premises-Hardware</li></ul></div>
+</div>
+</div></section>
+
+<section class="s" id="faq" style="padding-top:0"><div class="wrap">
+<div class="sh"><h2 class="disp h2 rv">Häufige Fragen.</h2></div>
+<div class="faq" id="faqs"><details><summary>Was ist Fairwall AI?</summary><p>Fairwall AI ist eine Privatsphäre-Schicht für die KI-Nutzung. Sensible Daten werden auf deinem Gerät erkannt und geschwärzt, bevor ein Prompt ein Cloud-KI-Tool wie ChatGPT, Claude oder Gemini erreicht. In der Antwort werden die echten Werte wieder eingesetzt, damit sie nutzbar bleibt.</p></details><details><summary>Verlassen meine Daten mein Gerät?</summary><p>Nein. Erkennung, Schwärzung und Wiederherstellung laufen lokal. Die Zuordnung zwischen Platzhalter und echtem Wert verlässt dein Gerät nie. Nichts gesendet. Nichts gespeichert. Nichts riskiert.</p></details><details><summary>Mit welchen KI-Tools funktioniert es?</summary><p>Mit jedem KI-Tool im Browser über das Browser-Plug-in. Lokale Anwendungen deckt die Desktop-Proxy-Schicht ab, Automatisierungen laufen über eigens gebaute n8n-Nodes.</p></details><details><summary>Ist Fairwall AI DSGVO-konform?</summary><p>Es ist für DSGVO-, HIPAA- und PCI-DSS-Abläufe gebaut. Jedes Schutzereignis wird mit forensischer ID, Zeitstempel und Latenzwert protokolliert, und der komplette Audit-Trail lässt sich durchsuchen und herunterladen. Fairwall AI ist ein Produkt der Data Dynamics AI FlexCo in Wien, Österreich; die Daten bleiben in der EU.</p></details><details><summary>Was kostet Fairwall AI?</summary><p>Einzelpläne starten bei 8,50 € pro Monat bei jährlicher Zahlung (30 % Rabatt auf den Monatspreis von 12 €), mit 15 Tagen kostenlos. Rollouts für Unternehmen und KI-Agenturen werden pro Deployment kalkuliert — buche eine Demo, wir klären es im Gespräch.</p></details><details><summary>Bremst es meine KI aus?</summary><p>Der typische Latenz-Overhead liegt bei rund 68 Millisekunden, im Alltag ist die Verzögerung also nicht spürbar.</p></details><details><summary>Lässt sich die Schwärzung rückgängig machen?</summary><p>Ja. Die Schwärzung ist von Grund auf umkehrbar: Platzhalter werden lokal zugeordnet und die echten Werte automatisch wieder in die KI-Antwort eingesetzt.</p></details></div>
+</div></section>
+
+<section class="dk cta" id="book"><div class="wrap">
+<div class="over rv" style="color:var(--slate-400)">Demo buchen · 30 Minuten, kein Verkaufsgespräch</div>
+<h2 class="disp rv" style="margin-top:20px">Sieh es live<br><span class="g">in Aktion.</span></h2>
+<div class="book">
+<div class="rv" style="display:flex;flex-direction:column;gap:24px"><p style="margin:0;color:var(--slate-300);font-size:17px;line-height:1.6;max-width:420px">Wähle einen Termin, der dir passt. Wir zeigen Erkennung, Schwärzung und Wiederherstellung an realistischen Beispiel-Prompts und klären danach den Rollout.</p><ul class="bl"><li>30 Minuten, kein Verkaufsgespräch</li><li>Live-Durchgang an deinem Anwendungsfall</li><li>Rollout und Preise im Gespräch geklärt</li></ul></div>
+<div class="cal rv"><iframe src="https://calendar.app.google/oMppAFrYK9qQw9wn9" title="Fairwall AI Demo buchen" loading="lazy"></iframe></div>
+</div>
+</div></section>
+</main>
+<footer class="dk"><div class="wrap">
+<div class="fgrid">
+<div><a class="logo" href="#" style="color:var(--white)!important"><img src="assets/logo-mark-new.png" alt=""><span>F<span class="g">ai</span>rwall <span class="g">AI</span></span></a><p style="margin:16px 0 0;line-height:1.55;max-width:260px">Privatsphäre im Zeitalter der KI. Ein Produkt der Data Dynamics AI FlexCo.</p></div>
+<div><h4>Produkt</h4><ul><li><a href="#try">Ausprobieren</a></li><li><a href="#why">Warum Fairwall AI</a></li><li><a href="#pricing">Preise</a></li><li><a href="#faq">FAQ</a></li><li><a href="#book">Demo buchen</a></li></ul></div>
+<div><h4>Insights</h4><ul><li><a href="insights.html">Alle Artikel</a></li><li><a href="gdpr-chatgpt.html">GDPR &amp; ChatGPT</a></li><li><a href="shadow-ai.html">Shadow AI</a></li><li><a href="stop-data-leaks-ai.html">Stop data leaks to AI</a></li><li><a href="pii-redaction-explained.html">PII redaction explained</a></li><li><a href="ai-privacy-for-agencies.html">AI privacy for agencies</a></li></ul></div>
+<div><h4>Unternehmen</h4><ul><li><a href="impressum.html">Impressum</a></li><li><a href="terms.html">AGB</a></li><li><a href="#" onclick="window.openCookieSettings&amp;&amp;window.openCookieSettings();return false">Cookie-Einstellungen</a></li><li><a href="index.html">English</a></li></ul></div>
+<div><h4>Büro</h4><div class="fmap"><iframe title="Fairwall AI Büro" loading="lazy" src="https://maps.google.com/maps?q=Biraghigasse%2033%2C%201130%20Wien&amp;z=15&amp;output=embed"></iframe></div><p style="margin:12px 0 0;line-height:1.5">Biraghigasse 33, 1130 Wien, Österreich</p></div>
+</div>
+<div class="fbot"><span>© 2026 F<span class="g">ai</span>rwall <span class="g">AI</span> · Data Dynamics AI FlexCo, Vienna</span><a href="mailto:juan@ddynamics.ai">juan@ddynamics.ai</a></div>
+</div></footer>
+<div id="widgets-root"></div>
+
 <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="_ds_bundle.js"></script>
-<link rel="preload" as="fetch" crossorigin href="./Brand.jsx"><link rel="preload" as="fetch" crossorigin href="./Header.jsx"><link rel="preload" as="fetch" crossorigin href="./Hero.jsx"><link rel="preload" as="fetch" crossorigin href="./LiveDemo.jsx"><link rel="preload" as="fetch" crossorigin href="./Principles.jsx"><link rel="preload" as="fetch" crossorigin href="./ProductForms.jsx"><link rel="preload" as="fetch" crossorigin href="./ProductTour.jsx"><link rel="preload" as="fetch" crossorigin href="./Segments.jsx"><link rel="preload" as="fetch" crossorigin href="./Pricing.jsx"><link rel="preload" as="fetch" crossorigin href="./Roadmap.jsx"><link rel="preload" as="fetch" crossorigin href="./Trust.jsx"><link rel="preload" as="fetch" crossorigin href="./Locations.jsx"><link rel="preload" as="fetch" crossorigin href="./FAQ.jsx"><link rel="preload" as="fetch" crossorigin href="./BookDemo.jsx"><link rel="preload" as="fetch" crossorigin href="./Footer.jsx"><link rel="preload" as="fetch" crossorigin href="./CookieConsent.jsx"><link rel="preload" as="fetch" crossorigin href="./ChatWidget.jsx">
-<style>
-@keyframes pulseDown{0%{top:0%;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:100%;opacity:0}}
-@keyframes shieldPulse{0%,100%{box-shadow:0 0 0 0 rgba(31,216,164,.45)}50%{box-shadow:0 0 0 10px rgba(31,216,164,0)}}
-@keyframes fadeInUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-@keyframes ringExpand{0%{width:70px;height:70px;opacity:.9}100%{width:280px;height:280px;opacity:0}}
-@keyframes floatUp{0%{transform:translateY(0);opacity:0}20%{opacity:.7}100%{transform:translateY(-160px);opacity:0}}
-@keyframes beamFlow{0%{background-position:0 -200%}100%{background-position:0 200%}}
-@keyframes markGlow{0%,100%{filter:drop-shadow(0 0 18px rgba(31,216,164,.55))}50%{filter:drop-shadow(0 0 34px rgba(31,216,164,.9))}}
-@keyframes pulseLeft{0%,100%{transform:translateX(0);opacity:1}50%{transform:translateX(-4px);opacity:.6}}
-.tour-nav-icon:hover{background:rgba(31,216,164,.18) !important;color:var(--teal-400) !important}
-</style>
-<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#080e19"/><path d="M100 55l30 12v26c0 26-18 42-30 48-12-6-30-22-30-48V67z" fill="none" stroke="#20c992" stroke-width="7"/><text x="100" y="160" font-family="sans-serif" font-size="26" font-weight="700" fill="#fff" text-anchor="middle">F<tspan fill="#20c992">ai</tspan>rwall</text></svg></template>
-<div id="prerender" style="font-family:var(--font-body,system-ui);color:#0f1c2e;max-width:820px;margin:0 auto;padding:56px 24px">
-<p style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#20c992;margin:0 0 10px">Fairwall AI</p>
-<h1 style="font-family:var(--font-display,system-ui);font-size:38px;line-height:1.15;margin:0 0 14px">Privatsphäre im Zeitalter der KI.</h1>
-<p style="font-size:17px;line-height:1.6;margin:0 0 8px">Fairwall AI steht zwischen dir und jedem KI-Tool und erkennt sensible Daten, bevor sie dein Gerät verlassen. Nichts gesendet. Nichts gespeichert. Nichts riskiert. Alles lokal.</p>
-<p style="font-size:15px;color:#5a6b80;margin:0 0 28px">89% der KI-Nutzung ist für Unternehmen heute unsichtbar.</p>
-<h2 style="font-family:var(--font-display,system-ui);font-size:22px;margin:26px 0 8px">Eine Privatsphäre-Schicht, überall wo du KI nutzt.</h2><p style="font-size:15.5px;line-height:1.65;margin:0">Drei Wege, Fairwall AI einzusetzen: ein Browser-Plug-in, das jedes KI-Tool automatisch schützt, eine Desktop-App mit Proxy-Schicht für alle Daten- und Medientypen, und eigens gebaute n8n-Nodes für automatisierte Workflows.</p><h2 style="font-family:var(--font-display,system-ui);font-size:22px;margin:26px 0 8px">Warum Fairwall AI.</h2><p style="font-size:15.5px;line-height:1.65;margin:0">Sichtbar, nicht unsichtbar — jede sensible Information wird markiert, sobald du sie eintippst. Immer deine Entscheidung — die Erkennung schlägt vor, entscheidet aber nie für dich. Geschützt, bevor es rausgeht — Redaktion und Verschlüsselung passieren auf deinem Gerät. Belegbar statt versprochen — jedes Schutzereignis wird mit forensischer ID, Zeitstempel und Latenzwert protokolliert.</p><h2 style="font-family:var(--font-display,system-ui);font-size:22px;margin:26px 0 8px">Im Produkt.</h2><p style="font-size:15.5px;line-height:1.65;margin:0">Das Fairwall-AI-Dashboard umfasst Mission Control, Erkennungs-Engines und Regeln, API-Keys, Projekte und einen forensischen Audit-Trail. Rund 68ms Latenz-Overhead, eine rein lokale Option und Unterstützung für DSGVO, HIPAA und PCI-DSS.</p><h2 style="font-family:var(--font-display,system-ui);font-size:22px;margin:26px 0 8px">Gebaut für deine Arbeitsweise.</h2><p style="font-size:15.5px;line-height:1.65;margin:0">Unternehmen rollen Datenschutz über alle Teams aus, ohne pro Person ein Plug-in verwalten zu müssen. Einzelpersonen schützen mit einer Installation alles, was sie in KI-Tools tippen. KI-Agenturen liefern Kundenautomatisierungen, ohne für deren Daten verantwortlich zu werden.</p><h2 style="font-family:var(--font-display,system-ui);font-size:22px;margin:26px 0 8px">Preise nach Segment.</h2><p style="font-size:15.5px;line-height:1.65;margin:0">Einzelpläne ab 8,50 € pro Monat, 30% Rabatt bei jährlicher Zahlung, 15 Tage kostenlos. Rollouts für Unternehmen und KI-Agenturen werden pro Deployment kalkuliert.</p>
-<h2 style="font-family:var(--font-display,system-ui);font-size:22px;margin:32px 0 8px">Häufige Fragen.</h2>
-<h3 style="font-size:16px;margin:18px 0 4px">Was ist Fairwall AI?</h3><p style="font-size:15px;line-height:1.6;margin:0">Fairwall AI ist eine Privatsphäre-Schicht für die KI-Nutzung. Sensible Daten werden auf deinem Gerät erkannt und geschwärzt, bevor ein Prompt ein Cloud-KI-Tool wie ChatGPT, Claude oder Gemini erreicht. In der Antwort werden die echten Werte wieder eingesetzt, damit sie nutzbar bleibt.</p><h3 style="font-size:16px;margin:18px 0 4px">Verlassen meine Daten mein Gerät?</h3><p style="font-size:15px;line-height:1.6;margin:0">Nein. Erkennung, Redaktion und Wiederherstellung laufen lokal. Die Zuordnung zwischen Platzhalter und echtem Wert verlässt dein Gerät nie. Nichts gesendet. Nichts gespeichert. Nichts riskiert.</p><h3 style="font-size:16px;margin:18px 0 4px">Mit welchen KI-Tools funktioniert es?</h3><p style="font-size:15px;line-height:1.6;margin:0">Mit jedem KI-Tool im Browser über das Browser-Plug-in. Lokale Anwendungen deckt die Desktop-Proxy-Schicht ab, Automatisierungen laufen über eigens gebaute n8n-Nodes.</p><h3 style="font-size:16px;margin:18px 0 4px">Ist Fairwall AI DSGVO-konform?</h3><p style="font-size:15px;line-height:1.6;margin:0">Es ist für DSGVO-, HIPAA- und PCI-DSS-Abläufe gebaut. Jedes Schutzereignis wird mit forensischer ID, Zeitstempel und Latenzwert protokolliert, und der komplette Audit-Trail lässt sich durchsuchen und herunterladen. Fairwall AI ist ein Produkt der Data Dynamics AI FlexCo in Wien, Österreich; die Daten bleiben in der EU.</p><h3 style="font-size:16px;margin:18px 0 4px">Was kostet Fairwall AI?</h3><p style="font-size:15px;line-height:1.6;margin:0">Einzelpläne starten bei 8,50 € pro Monat, mit 30% Rabatt bei jährlicher Zahlung und 15 Tagen kostenlos. Rollouts für Unternehmen und KI-Agenturen werden pro Deployment kalkuliert — buche eine Demo, wir klären es im Gespräch.</p><h3 style="font-size:16px;margin:18px 0 4px">Bremst es meine KI aus?</h3><p style="font-size:15px;line-height:1.6;margin:0">Der typische Latenz-Overhead liegt bei rund 68 Millisekunden, im Alltag ist die Verzögerung also nicht spürbar.</p><h3 style="font-size:16px;margin:18px 0 4px">Lässt sich die Schwärzung rückgängig machen?</h3><p style="font-size:15px;line-height:1.6;margin:0">Ja. Die Redaktion ist von Grund auf umkehrbar: Platzhalter werden lokal zugeordnet und die echten Werte automatisch wieder in die KI-Antwort eingesetzt.</p>
-<noscript><p style="margin-top:28px;font-size:14px;color:#5a6b80">Diese Seite lädt ihre interaktive Demo per JavaScript. Der vollständige Text der Seite steht unten.</p></noscript>
-</div>
-<div id="root"></div>
-<script type="text/babel" src="./Brand.jsx"></script>
-<script type="text/babel" src="./Header.jsx"></script>
-<script type="text/babel" src="./Hero.jsx"></script>
-<script type="text/babel" src="./LiveDemo.jsx"></script>
-<script type="text/babel" src="./Principles.jsx"></script>
-<script type="text/babel" src="./ProductForms.jsx"></script>
-<script type="text/babel" src="./ProductTour.jsx"></script>
-<script type="text/babel" src="./Segments.jsx"></script>
-<script type="text/babel" src="./Pricing.jsx"></script>
-<script type="text/babel" src="./Roadmap.jsx"></script>
-<script type="text/babel" src="./Trust.jsx"></script>
-<script type="text/babel" src="./Locations.jsx"></script>
-<script type="text/babel" src="./BookDemo.jsx"></script>
-<script type="text/babel" src="./FAQ.jsx"></script>
-<script type="text/babel" src="./Footer.jsx"></script>
-<script type="text/babel" src="./CookieConsent.jsx"></script>
-<script type="text/babel" src="./ChatWidget.jsx"></script>
-<script type="text/babel">
-class SafeBoundary extends React.Component{constructor(p){super(p);this.state={};}static getDerivedStateFromError(){return{e:1}}render(){return this.state.e?null:this.props.children}}
-function App(){
-  return <div style={{background:'#fff'}}>
-    <Header/><Hero/><LiveDemo/><Principles/><ProductForms/><ProductTour/><Segments/><Pricing/><Roadmap/><Trust/><Locations/><SafeBoundary><FAQ/></SafeBoundary><BookDemo/><Footer/><ChatWidget/><CookieConsent/>
-  </div>;
+<script src="i18n.js"></script>
+<script type="text/babel" src="Brand.jsx"></script>
+<script type="text/babel" src="ProductTour.jsx"></script>
+<script type="text/babel" src="CookieConsent.jsx"></script>
+<script type="text/babel" src="ChatWidget.jsx"></script>
+<script type="text/babel">ReactDOM.createRoot(document.getElementById('tour-root')).render(<ProductTour/>);
+ReactDOM.createRoot(document.getElementById('widgets-root')).render(<><ChatWidget/><CookieConsent/></>);</script>
+<script src="engine.js"></script>
+<script>
+const $=s=>document.querySelector(s);
+addEventListener('scroll',()=>$('#nav').classList.toggle('s',scrollY>10),{passive:true});
+// live workbench
+const ta=$('#ta'),mir=$('#mir'),out=$('#out');let hits=[],phase=0,pi=0,timer;
+const flow=[...document.querySelectorAll('#flow span')];
+function setFlow(n){flow.forEach((f,i)=>f.classList.toggle('on',i<=n))}
+const URLS=['chatgpt.com','claude.ai','gemini.google.com','copilot.microsoft.com','perplexity.ai','chat.mistral.ai'];let ui=0;
+setInterval(()=>{const u=$('#url');u.classList.add('sw');setTimeout(()=>{ui=(ui+1)%URLS.length;u.textContent=URLS[ui];u.classList.remove('sw');[...$('#works').children].forEach((s,j)=>s.classList.toggle('on',j===ui))},300)},2600);
+let lastN=0;
+function sync(){
+  const t=ta.value;hits=FW.detect(t);
+  mir.innerHTML=FW.render(t,hits,'mark')+'\n';
+  $('#cnt').textContent=hits.length;$('#fwb').classList.toggle('ok',phase>0);if(hits.length!==lastN){lastN=hits.length;const f=$('#fwb');f.classList.add('pop');setTimeout(()=>f.classList.remove('pop'),220)}
+  const types={};hits.forEach(h=>types[h.type]=(types[h.type]||0)+1);
+  $('#meter').innerHTML=Object.entries(types).map(([k,v])=>`<span class="chip">${v}× ${k}</span>`).join('');
+  if(phase===0){out.innerHTML=FW.render(t,hits,'redact');$('#outl').textContent='Was die KI erhält';$('#outs').textContent='Auf deinem Gerät geschwärzt';setFlow(hits.length?1:0)}
+  $('#lat').textContent=(hits.length?Math.round(40+hits.length*4):0)+' ms · lokal';
 }
-ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
-(function(){var r=document.getElementById('root');var drop=function(){var p=document.getElementById('prerender');if(p&&r.childElementCount){p.remove();return true}return false};
-if(drop())return;var o=new MutationObserver(function(){if(drop())o.disconnect()});o.observe(r,{childList:true});setTimeout(drop,1200)})();
+function reset(){phase=0;clearTimeout(timer);$('#send').disabled=false;$('#rest').disabled=true;sync()}
+ta.addEventListener('input',reset);
+const tabs=$('#tabs');FW.presets.forEach((p,i)=>{const b=document.createElement('button');b.textContent=p.k;b.onclick=()=>load(i);tabs.appendChild(b)});
+function load(i){pi=i;[...tabs.children].forEach((b,j)=>b.classList.toggle('on',j===i));ta.value='';reset();let k=0;const t=FW.presets[i].p;clearInterval(window._ty);
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches){ta.value=t;sync();return}
+  window._ty=setInterval(()=>{k+=2;ta.value=t.slice(0,k);sync();if(k>=t.length)clearInterval(window._ty)},18)}
+$('#send').onclick=()=>{
+  phase=1;setFlow(2);$('#send').disabled=true;
+  const P=FW.presets[pi],custom=ta.value!==P.p;
+  const reply=custom?hits.length?'Erledigt. Diese Angaben habe ich genau so übernommen: '+[...new Set(hits.map(h=>h.ph))].join(', ')+'.':'Es wurde nichts Sensibles erkannt, daher wurde dein Prompt unverändert gesendet.':P.r;
+  $('#outl').textContent='KI-Antwort';$('#fwb').classList.add('ok');$('#outs').textContent='Nur Platzhalter kamen zurück';
+  let k=0;const html=FW.phs(reply);out.innerHTML='';
+  (function tick(){k+=3;out.textContent=reply.slice(0,k);if(k<reply.length)timer=setTimeout(tick,14);else{out.innerHTML=html;$('#rest').disabled=!hits.length;out.dataset.r=reply}})();
+};
+$('#rest').onclick=()=>{phase=2;setFlow(3);$('#rest').disabled=true;out.innerHTML=FW.restore(out.dataset.r,hits,true);$('#outl').textContent='Antwort, auf deinem Gerät wiederhergestellt';$('#outs').textContent='Protokolliert · FW-8F2A-0411'};
+load(0);
+// reveal + counter
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');io.unobserve(e.target);
+  if(e.target.id==='big'){let v=0;const go=()=>{v+=.8;e.target.textContent=Math.min(39.7,v).toFixed(1).replace('.',',')+' %';if(v<39.7)requestAnimationFrame(go)};go()}}),{threshold:.2});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*80+'ms';io.observe(el)});
+// pricing
+const PR={Individuals:[['Basic',['€12','€8,50',102],[['Für KI im Browser:',['Desktop-App','Plug-ins']]]],['Medium',['€14','€10',120],[['Für KI in jeder App:',['Proxy-Ebene für lokale Apps','Multimodale Unterstützung für PDF, Audio, Bild und Video']]]],['Advanced',['€17','€12',144],[['Für KI in Workflows:',['Node für KI-Workflows (n8n)']]]]],
+Corporates:[['Basic',null,[['Für KI im Browser:',['Unternehmens-Dashboard','Desktop-App','Plug-ins']]]],['Medium',null,[['Für KI in jeder App:',['Proxy-Ebene','Multimodale Unterstützung für PDF, Audio, Bild und Video']]]],['Advanced',null,[['Für mehr Leistung und Kontrolle:',['On-Premises-Hardware (in Entwicklung)']]]]],
+'AI Agencies':[['Basic',null,[['Für KI im Browser:',['Desktop-App','Plug-ins']],['Für KI in Workflows:',['Node für KI-Workflows (n8n)']]]],['Medium',null,[['Für KI in jeder App:',['Proxy-Ebene für lokale Apps','Multimodale Unterstützung für PDF, Audio, Bild und Video']]]],['Advanced',null,[['Für den Wiederverkauf unter eigener Marke:',['White-Label: verkaufe das Produkt als dein eigenes']]]]]};
+let bill='monthly',seg='Individuals';
+function tiers(k){seg=k;const ind=k==='Individuals',y=bill==='yearly';$('#pnote').style.display=ind?'':'none';$('#bill').style.display=ind?'':'none';
+  $('#tiers').innerHTML=PR[k].map(([n,p,g],i)=>`<div class="tier ${i===1?'hl':''}"><div class="nm"><b>${n}</b>${i===1?'<span class="pop">AM HÄUFIGSTEN</span>':''}</div><div><div class="pr">${p?(y?p[1]:p[0])+'<small> /Monat</small>':'Individuell'}</div>${p&&y?`<div class="grp" style="margin:8px 0 0">jährlich abgerechnet · €${p[2]}/Jahr</div>`:''}</div>${i?`<div class="grp" style="font-weight:600">Alles aus ${PR[k][i-1][0]}, plus:</div>`:''}${g.map(([t,l])=>`<div class="grp">${t}</div><ul>${l.map(x=>`<li>${x}</li>`).join('')}</ul>`).join('')}<a class="btn ${i===1?'btn-g':'btn-o'}" href="${ind?'checkout.html':'book-demo.html'}">${ind?'Kostenlos testen':'Kontakt aufnehmen'}</a></div>`).join('')}
+document.querySelectorAll('#bill button').forEach(b=>b.onclick=()=>{bill=b.dataset.b;document.querySelectorAll('#bill button').forEach(x=>x.classList.toggle('on',x===b));tiers(seg)});
+document.querySelectorAll('#seg button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#seg button').forEach(x=>x.classList.toggle('on',x===b));tiers(b.dataset.k)});tiers('Individuals');
 </script>
+</body>
+</html>
