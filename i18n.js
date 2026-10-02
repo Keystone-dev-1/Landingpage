@@ -42,7 +42,7 @@ en:{
     ['Does my data leave my device?','No. Detection, redaction and restore all run locally. The mapping between a placeholder and the real value never leaves your machine. Nothing sent. Nothing stored. Nothing risked.'],
     ['Which AI tools does it work with?','Any AI tool you use in the browser, through the browser plug-in. Local applications are covered by the desktop proxy layer, and automations through purpose-built n8n nodes.'],
     ['Is Fairwall AI GDPR compliant?','It is built for GDPR, HIPAA and PCI-DSS workflows. Every protection event is logged with a forensic ID, a timestamp and a latency figure, and the full audit trail can be searched and downloaded. Fairwall AI is a product of Data Dynamics AI FlexCo in Vienna, Austria, and data stays in the EU.'],
-    ['How much does Fairwall AI cost?','Individual plans start at €8.50 per month, with 30% off when billed yearly and a 15-day free trial. Corporate and AI agency rollouts are quoted per deployment — book a demo and we scope it in the call.'],
+    ['How much does Fairwall AI cost?','Individual plans start at €8.50 per month when billed yearly (30% off the €12 monthly price), with a 15-day free trial. Corporate and AI agency rollouts are quoted per deployment — book a demo and we scope it in the call.'],
     ['Does it slow down my AI?','Typical latency overhead is around 68 milliseconds, so in normal use the delay is not noticeable.'],
     ['Is the redaction reversible?','Yes. Redaction is reversible by design: placeholders are mapped locally and the real values are put back into the AI reply automatically.']]},
 },
@@ -88,7 +88,7 @@ de:{
     ['Verlassen meine Daten mein Gerät?','Nein. Erkennung, Redaktion und Wiederherstellung laufen lokal. Die Zuordnung zwischen Platzhalter und echtem Wert verlässt dein Gerät nie. Nichts gesendet. Nichts gespeichert. Nichts riskiert.'],
     ['Mit welchen KI-Tools funktioniert es?','Mit jedem KI-Tool im Browser über das Browser-Plug-in. Lokale Anwendungen deckt die Desktop-Proxy-Schicht ab, Automatisierungen laufen über eigens gebaute n8n-Nodes.'],
     ['Ist Fairwall AI DSGVO-konform?','Es ist für DSGVO-, HIPAA- und PCI-DSS-Abläufe gebaut. Jedes Schutzereignis wird mit forensischer ID, Zeitstempel und Latenzwert protokolliert, und der komplette Audit-Trail lässt sich durchsuchen und herunterladen. Fairwall AI ist ein Produkt der Data Dynamics AI FlexCo in Wien, Österreich; die Daten bleiben in der EU.'],
-    ['Was kostet Fairwall AI?','Einzelpläne starten bei 8,50 € pro Monat, mit 30% Rabatt bei jährlicher Zahlung und 15 Tagen kostenlos. Rollouts für Unternehmen und KI-Agenturen werden pro Deployment kalkuliert — buche eine Demo, wir klären es im Gespräch.'],
+    ['Was kostet Fairwall AI?','Einzelpläne starten bei 8,50 € pro Monat bei jährlicher Zahlung (30 % Rabatt auf den Monatspreis von 12 €), mit 15 Tagen kostenlos. Rollouts für Unternehmen und KI-Agenturen werden pro Deployment kalkuliert — buche eine Demo, wir klären es im Gespräch.'],
     ['Bremst es meine KI aus?','Der typische Latenz-Overhead liegt bei rund 68 Millisekunden, im Alltag ist die Verzögerung also nicht spürbar.'],
     ['Lässt sich die Schwärzung rückgängig machen?','Ja. Die Redaktion ist von Grund auf umkehrbar: Platzhalter werden lokal zugeordnet und die echten Werte automatisch wieder in die KI-Antwort eingesetzt.']]},
 }};
