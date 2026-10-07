@@ -1,7 +1,7 @@
 // Site copy for both languages. Set window.SITE_LANG='de' before the component scripts load.
 window.STRINGS = {
 en:{
-  header:{nav:[['Product','#tour'],['Live Demo','#demo'],['Pricing','#pricing'],['Insights','insights.html']],signIn:'Sign in',cta:'Get started'},
+  header:{nav:[['Product','#tour'],['Live Demo','#demo'],['Pricing','#pricing'],['Insights','/insights']],signIn:'Sign in',cta:'Get started'},
   hero:{stat:'89%',statLabel:'of AI usage today is invisible to organizations.',h1:'Privacy in the Age of AI.',
     lead:' stands between you and every AI tool — catching sensitive data before it ever leaves your device. ',
     bold:'Nothing sent. Nothing stored. Nothing risked. All done locally.',
@@ -47,7 +47,7 @@ en:{
     ['Is the redaction reversible?','Yes. Redaction is reversible by design: placeholders are mapped locally and the real values are put back into the AI reply automatically.']]},
 },
 de:{
-  header:{nav:[['Produkt','#tour'],['Live-Demo','#demo'],['Preise','#pricing'],['Insights','insights.html']],signIn:'Anmelden',cta:'Loslegen'},
+  header:{nav:[['Produkt','#tour'],['Live-Demo','#demo'],['Preise','#pricing'],['Insights','/insights']],signIn:'Anmelden',cta:'Loslegen'},
   hero:{stat:'89%',statLabel:'der KI-Nutzung ist für Unternehmen heute unsichtbar.',h1:'Privatsphäre im Zeitalter der KI.',
     lead:' steht zwischen dir und jedem KI-Tool und erkennt sensible Daten, bevor sie dein Gerät verlassen. ',
     bold:'Nichts gesendet. Nichts gespeichert. Nichts riskiert. Alles lokal.',
@@ -93,4 +93,4 @@ de:{
     ['Lässt sich die Schwärzung rückgängig machen?','Ja. Die Redaktion ist von Grund auf umkehrbar: Platzhalter werden lokal zugeordnet und die echten Werte automatisch wieder in die KI-Antwort eingesetzt.']]},
 }};
 window.t = (k)=> (window.STRINGS[window.SITE_LANG||'en']||window.STRINGS.en)[k] || window.STRINGS.en[k];
-window.otherLangHref = ()=> (window.SITE_LANG==='de' ? 'index.html' : 'index-de.html');
+window.otherLangHref = ()=> (window.SITE_LANG==='de' ? '/' : '/de');

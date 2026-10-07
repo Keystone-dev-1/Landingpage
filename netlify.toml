@@ -6,7 +6,8 @@
 # Host canonicalization (www vs bare) is handled by Netlify's own
 # domain settings — do NOT add a forced redirect here, it causes a loop.
 
-# Pretty URLs
+# Clean URLs: pages are served at /terms, /shadow-ai … (Netlify serves terms.html for /terms).
+# Canonicals, sitemap and internal links all use the extensionless form, so Google never hits a redirect.
 [[redirects]]
   from = "/de"
   to = "/index-de.html"
@@ -26,7 +27,7 @@
   status = 301
 [[redirects]]
   from = "/demo"
-  to = "/book-demo.html"
+  to = "/book-demo"
   status = 301
 [[redirects]]
   from = "/pricing"

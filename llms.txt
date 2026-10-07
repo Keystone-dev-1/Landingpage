@@ -26,17 +26,17 @@ Fairwall AI is a brand and product of Data Dynamics AI FlexCo, Biraghigasse 33, 
 - Corporates and AI agencies: quoted per rollout, scoped in a demo call.
 
 ## Insights (long-form)
-- [Can you use ChatGPT under GDPR?](https://www.fairwall.ai/gdpr-chatgpt.html): which GDPR articles apply to cloud AI use and why local redaction resolves most of them.
-- [Shadow AI: why most AI use at work is invisible](https://www.fairwall.ai/shadow-ai.html): why blocking fails and device-level protection works.
-- [How to stop staff pasting client data into AI tools](https://www.fairwall.ai/stop-data-leaks-ai.html): a five-step operational approach.
-- [Reversible PII redaction, explained](https://www.fairwall.ai/pii-redaction-explained.html): the token substitution and local restore mechanism.
-- [Who is liable when a client's data reaches a model?](https://www.fairwall.ai/ai-privacy-for-agencies.html): processor obligations for AI agencies.
+- [Can you use ChatGPT under GDPR?](https://www.fairwall.ai/gdpr-chatgpt): which GDPR articles apply to cloud AI use and why local redaction resolves most of them.
+- [Shadow AI: why most AI use at work is invisible](https://www.fairwall.ai/shadow-ai): why blocking fails and device-level protection works.
+- [How to stop staff pasting client data into AI tools](https://www.fairwall.ai/stop-data-leaks-ai): a five-step operational approach.
+- [Reversible PII redaction, explained](https://www.fairwall.ai/pii-redaction-explained): the token substitution and local restore mechanism.
+- [Who is liable when a client's data reaches a model?](https://www.fairwall.ai/ai-privacy-for-agencies): processor obligations for AI agencies.
 
 ## Pages
 - [Home (English)](https://www.fairwall.ai/): product overview, interactive redaction demo, dashboard tour, pricing, roadmap, FAQ.
-- [Home (German)](https://www.fairwall.ai/index-de.html): German version of the site.
-- [Book a demo](https://www.fairwall.ai/book-demo.html): 30-minute live walkthrough with realistic example prompts.
-- [Insights](https://www.fairwall.ai/insights.html): long-form articles on AI privacy and compliance.
-- [Contact](https://www.fairwall.ai/contact.html)
-- [Impressum / Legal notice](https://www.fairwall.ai/impressum.html)
-- [Terms & Conditions](https://www.fairwall.ai/terms.html)
+- [Home (German)](https://www.fairwall.ai/de): German version of the site.
+- [Book a demo](https://www.fairwall.ai/book-demo): 30-minute live walkthrough with realistic example prompts.
+- [Insights](https://www.fairwall.ai/insights): long-form articles on AI privacy and compliance.
+- [Contact](https://www.fairwall.ai/contact)
+- [Impressum / Legal notice](https://www.fairwall.ai/impressum)
+- [Terms & Conditions](https://www.fairwall.ai/terms)

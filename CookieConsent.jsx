@@ -25,7 +25,7 @@ function CookieConsent(){
     <div style={{pointerEvents:'auto',width:'100%',maxWidth:760,background:'var(--navy-950)',color:'#fff',border:'1px solid rgba(255,255,255,.14)',borderRadius:'var(--radius-lg)',boxShadow:'0 18px 50px rgba(0,0,0,.38)',padding:'22px 24px',fontFamily:'var(--font-body)'}}>
       <div style={{fontFamily:'var(--font-display)',fontWeight:800,fontSize:17,marginBottom:8}}>{T.title}</div>
       <p style={{margin:'0 0 16px',fontSize:14,lineHeight:1.6,color:'var(--text-inverse-secondary)',textWrap:'pretty'}}>
-        {T.body}<a href="impressum.html" style={link}>{T.privacy}</a>{T.and}<a href="terms.html" style={link}>{T.terms}</a>.
+        {T.body}<a href="/impressum" style={link}>{T.privacy}</a>{T.and}<a href="/terms" style={link}>{T.terms}</a>.
       </p>
       {panel&&<div style={{display:'flex',flexDirection:'column',gap:10,marginBottom:18}}>
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',gap:16,background:'rgba(255,255,255,.05)',borderRadius:'var(--radius-md)',padding:'12px 14px'}}>

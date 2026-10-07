@@ -16,8 +16,9 @@ Netlify is linked to this repo's `main` branch.
 | Path | What it is |
 |---|---|
 | `index.html` | English homepage — loads all section components |
-| `index-de.html` | German homepage (same components, `?lang=de`) |
-| `*.jsx` | Section components (Hero, Pricing, LiveDemo…), rendered in-browser via Babel |
+| `index-de.html` | German homepage, served at `/de` |
+| `engine.js` | Homepage demo + interactions |
+| `*.jsx` | Brand, ProductTour, CookieConsent, ChatWidget — rendered in-browser via Babel |
 | `styles.css` | Design-system tokens and base styles |
 | `responsive.css` | Mobile and tablet overrides |
 | `article.css`, `legal.css` | Insights articles, legal pages |
@@ -28,8 +29,7 @@ Netlify is linked to this repo's `main` branch.
 | `impressum.html`, `terms.html` | Legal (bilingual) |
 | `book-demo.html` | Google Calendar embed |
 | `sitemap.xml`, `robots.txt`, `llms.txt` | Crawler + AI-search directives |
-| `netlify.toml`, `_headers`, `_redirects` | Hosting config |
-| `mobile-preview.html` | Dev tool — phone-frame preview, not linked from the site |
+| `netlify.toml` | Hosting config: redirects + headers |
 
 ## Editing
 
