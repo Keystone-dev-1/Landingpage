@@ -204,13 +204,30 @@ footer{padding:72px 0 32px;color:var(--slate-400);font-size:14px;border-top:1px 
 .act{flex-wrap:wrap}.act .lat{margin-left:0;width:100%}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 .ln>span{transform:none}.rv{opacity:1;transform:none}}
+
+/* mobile menu */
+.mtog{display:none;width:40px;height:40px;border-radius:10px;border:1px solid var(--slate-200);background:var(--white);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0;flex:none}
+.mtog span{display:block;width:18px;height:2px;background:var(--navy-950);border-radius:2px;transition:transform .25s}
+.links .mo{display:none}
+@media (max-width:960px){
+nav.top .mtog{display:inline-flex}
+nav.top .lang{display:none}
+nav.top .links{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--white);padding:6px clamp(20px,4vw,48px) 16px;border-bottom:1px solid var(--slate-200);box-shadow:0 24px 40px -24px rgba(8,14,25,.3)}
+nav.top.open .links{display:flex}
+nav.top .links a{padding:14px 0;border-bottom:1px solid var(--slate-100);font-size:17px;color:var(--navy-950)}
+nav.top .links a:last-child{border-bottom:0}
+nav.top .links .mo{display:block}
+nav.top.open .mtog span:first-child{transform:translateY(3.5px) rotate(45deg)}
+nav.top.open .mtog span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+nav.top .navr{gap:10px}nav.top .navr .btn{padding:0 14px}
+}
 </style>
 </head>
 <body>
 <nav class="top" id="nav"><div class="wrap">
 <a class="logo" href="#"><img src="assets/logo-mark-new.png" alt=""><span>F<span class="g">ai</span>rwall <span class="g">AI</span></span></a>
-<div class="links"><a href="#try">Ausprobieren</a><a href="#why">Warum</a><a href="#pricing">Preise</a><a href="#faq">FAQ</a><a href="/simulator">Simulator</a></div>
-<div class="navr"><a class="lang" href="/">DE / EN</a><a class="btn btn-n" href="#book">Demo buchen</a></div>
+<div class="links" id="navlinks"><a href="#try">Ausprobieren</a><a href="#why">Warum</a><a href="#pricing">Preise</a><a href="#faq">FAQ</a><a href="/simulator">Simulator</a><a class="mo" href="/">English</a></div>
+<div class="navr"><a class="lang" href="/">DE / EN</a><a class="btn btn-n" href="#book">Demo buchen</a><button class="mtog" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span></button></div>
 </div></nav>
 <main>
 
@@ -366,5 +383,8 @@ function tiers(k){seg=k;const ind=k==='Individuals',y=bill==='yearly';$('#pnote'
 document.querySelectorAll('#bill button').forEach(b=>b.onclick=()=>{bill=b.dataset.b;document.querySelectorAll('#bill button').forEach(x=>x.classList.toggle('on',x===b));tiers(seg)});
 document.querySelectorAll('#seg button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#seg button').forEach(x=>x.classList.toggle('on',x===b));tiers(b.dataset.k)});tiers('Individuals');
 </script>
+<script>(function(){var n=document.getElementById('nav'),b=n&&n.querySelector('.mtog');if(!b)return;
+b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
+n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');b.setAttribute('aria-expanded','false')})});})();</script>
 </body>
 </html>

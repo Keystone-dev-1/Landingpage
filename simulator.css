@@ -248,6 +248,23 @@ fieldset.f{border:0;margin:16px 0 0;padding:0}
 .formerr{margin-top:12px;color:var(--red-600);font-size:14px}
 .hp{position:absolute!important;left:-9999px!important}
 
+/* mobile menu */
+.mtog{display:none;width:40px;height:40px;border-radius:10px;border:1px solid var(--slate-200);background:var(--white);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0;flex:none}
+.mtog span{display:block;width:18px;height:2px;background:var(--navy-950);border-radius:2px;transition:transform .25s}
+.links .mo{display:none}
+@media (max-width:960px){
+nav.top .mtog{display:inline-flex}
+nav.top .lang{display:none}
+nav.top .links{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--white);padding:6px clamp(20px,4vw,48px) 16px;border-bottom:1px solid var(--slate-200);box-shadow:0 24px 40px -24px rgba(8,14,25,.3)}
+nav.top.open .links{display:flex}
+nav.top .links a{padding:14px 0;border-bottom:1px solid var(--slate-100);font-size:17px;color:var(--navy-950)}
+nav.top .links a:last-child{border-bottom:0}
+nav.top .links .mo{display:block}
+nav.top.open .mtog span:first-child{transform:translateY(3.5px) rotate(45deg)}
+nav.top.open .mtog span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+nav.top .navr{gap:10px}nav.top .navr .btn{padding:0 14px}
+}
+
 /* ---------- responsive ---------- */
 @media (max-width:960px){
   .links{display:none}

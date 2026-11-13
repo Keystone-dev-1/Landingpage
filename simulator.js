@@ -551,11 +551,14 @@ form.addEventListener('submit', function (e) {
   if (!validate()) return;
   var btn = $('#leadSubmit'); btn.disabled = true; btn.textContent = 'Sending…';
   var body = new URLSearchParams(new FormData(form)).toString();
-  fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+  // Primary: our Netlify Function forwards the lead to GoHighLevel.
+  fetch('/.netlify/functions/simulator-lead', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
     .then(function (r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
       gtagEv('generate_lead', { form: 'simulator' });
-      window.location.href = '/simulator/book';
+      // Backup copy in Netlify Forms (works once form detection is on; failures are ignored).
+      try { fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body, keepalive: true }).catch(function () {}); } catch (e) {}
+      setTimeout(function () { window.location.href = '/simulator/book'; }, 150);
     })
     .catch(function () {
       btn.disabled = false; btn.textContent = 'Continue to booking →';

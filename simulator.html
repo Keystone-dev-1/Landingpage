@@ -25,8 +25,8 @@
 
 <nav class="top" id="nav"><div class="wrap">
 <a class="logo" href="/"><img src="/assets/logo-mark-new.png" alt=""><span>F<span class="g">ai</span>rwall <span class="g">AI</span></span></a>
-<div class="links"><a href="/#try">Try it</a><a href="/#why">Why</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/simulator" class="cur" aria-current="page">Simulator</a></div>
-<div class="navr"><a class="btn btn-n" href="/book-demo">Book a demo</a></div>
+<div class="links" id="navlinks"><a href="/#try">Try it</a><a href="/#why">Why</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/simulator" class="cur" aria-current="page">Simulator</a></div>
+<div class="navr"><a class="btn btn-n" href="/book-demo">Book a demo</a><button class="mtog" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span></button></div>
 </div></nav>
 
 <main>
@@ -140,5 +140,8 @@
 
 <script src="/simulator-assumptions.js"></script>
 <script src="/simulator.js"></script>
+<script>(function(){var n=document.getElementById('nav'),b=n&&n.querySelector('.mtog');if(!b)return;
+b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
+n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');b.setAttribute('aria-expanded','false')})});})();</script>
 </body>
 </html>

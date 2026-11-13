@@ -7,4 +7,4 @@
 /en            /index.html      200
 /demo          /book-demo.html  301
 /pricing       /#pricing        301
-/netlify/*       /404              404
+/netlify/*       /404              404!
