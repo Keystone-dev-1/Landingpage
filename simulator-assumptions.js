@@ -4,9 +4,13 @@
  * EVERY number on /simulator is derived from:  computers × the values below.
  * There are no random numbers and no hidden constants anywhere else.
  *
- * To change a value: edit `value` (and `source` once you have verified it).
+ * To change a value: edit `value` and update `source` (and `url` if there is one).
  * The "How we calculate this" panel on the page lists everything in this file,
- * so what you write in `label`, `unit` and `source` is shown to visitors.
+ * so what you write in `label`, `unit`, `source` and `url` is shown to visitors.
+ *
+ * Status (Nov 2026): values are taken from published studies where one exists, and
+ * clearly marked as assumptions where none does. Replace them with measured figures
+ * from Fairwall AI customer deployments as they become available.
  *
  * (Plain JavaScript rather than TypeScript: the site is static and has no build step.)
  */
@@ -15,52 +19,56 @@ window.SIMULATOR_ASSUMPTIONS = {
     label: 'Users per computer',
     value: 1.0,
     unit: 'employees per computer',
-    source: 'Placeholder, to be verified. Assumes one primary user per work computer.'
+    source: 'Assumption: one primary user per work computer.'
   },
   aiAdoptionRate: {
     label: 'AI adoption rate',
     value: 0.75,
     unit: 'share of employees using AI tools at work',
-    source: 'Placeholder, to be verified against a published workplace AI adoption survey.'
+    source: 'Microsoft & LinkedIn, 2024 Work Trend Index (31,000 knowledge workers, 31 countries): 75% of knowledge workers use AI at work.',
+    url: 'https://blogs.microsoft.com/blog/2024/05/08/microsoft-and-linkedin-release-the-2024-work-trend-index-on-the-state-of-ai-at-work/'
   },
   shadowAiRate: {
     label: 'Shadow AI rate',
-    value: 0.50,
-    unit: 'share of AI users on tools not approved by IT',
-    source: 'Placeholder, to be verified against a published shadow AI study.'
+    value: 0.78,
+    unit: 'share of AI users bringing their own, unapproved AI tools',
+    source: 'Microsoft & LinkedIn, 2024 Work Trend Index: 78% of AI users bring their own AI tools to work ("BYOAI").',
+    url: 'https://blogs.microsoft.com/blog/2024/05/08/microsoft-and-linkedin-release-the-2024-work-trend-index-on-the-state-of-ai-at-work/'
   },
   promptsPerUserPerDay: {
     label: 'Prompts per AI user',
-    value: 15,
+    value: 5,
     unit: 'prompts per working day',
-    source: 'Placeholder, to be verified. A prompt is one message, paste or upload sent to an AI tool.'
+    source: 'LayerX, State of AI Usage report: AI conversations average about 5 prompts each. Combined with our assumption of one AI conversation per AI user per working day.',
+    url: 'https://layerxsecurity.com/library/reports/state-of-ai-usage-report-2026/'
   },
   workdaysPerYear: {
     label: 'Working days',
     value: 220,
     unit: 'days per year',
-    source: 'Placeholder. Typical full-time working year after weekends, holidays and leave.'
+    source: 'Approximation for Austria: about 261 weekdays, minus public holidays on weekdays, 25 days of statutory annual leave and some sick days.'
   },
   sensitivePromptRate: {
     label: 'Sensitive prompt rate',
-    value: 0.08,
+    value: 0.085,
     unit: 'share of prompts containing sensitive data',
-    source: 'Placeholder, to be verified. Conservative compared with published estimates of sensitive content in AI inputs.'
+    source: 'Harmonic Security, analysis of tens of thousands of enterprise prompts to ChatGPT, Copilot, Gemini, Claude and Perplexity (Q4 2024): 8.5% contained sensitive data.',
+    url: 'https://www.harmonic.security/resources/new-research-the-data-leaking-into-genai-tools'
   },
 
   /* Breakdown of sensitive prompts. Shares must add up to 1.0.
      `severity` only controls the colour on the page (critical = red, high = orange, medium = amber). */
   categories: [
-    { key: 'customer',  label: 'Customer personal data',     share: 0.45, severity: 'high',     example: 'Names, emails, addresses of customers',
-      source: 'Placeholder, to be verified.' },
-    { key: 'employee',  label: 'Employee data',               share: 0.20, severity: 'high',     example: 'Salaries, sick leave, HR records',
-      source: 'Placeholder, to be verified.' },
-    { key: 'financial', label: 'Financial data',              share: 0.15, severity: 'critical', example: 'IBANs, invoices, amounts',
-      source: 'Placeholder, to be verified.' },
-    { key: 'code',      label: 'Source code & credentials',   share: 0.10, severity: 'critical', example: 'API keys, passwords, config files',
-      source: 'Placeholder, to be verified.' },
-    { key: 'legal',     label: 'Legal & strategic documents', share: 0.10, severity: 'medium',   example: 'Contracts, board minutes, M&A notes',
-      source: 'Placeholder, to be verified.' }
+    { key: 'customer',     label: 'Customer data',            share: 0.458, severity: 'high',     example: 'Customer reports, billing and payment details',
+      source: 'Harmonic Security (Q4 2024): 45.8% of sensitive prompts.', url: 'https://www.helpnetsecurity.com/2025/01/20/genai-prompts-risk/' },
+    { key: 'employee',     label: 'Employee data',            share: 0.268, severity: 'high',     example: 'Payroll, personal identifiers, employment records',
+      source: 'Harmonic Security (Q4 2024): 26.8% of sensitive prompts.', url: 'https://www.helpnetsecurity.com/2025/01/20/genai-prompts-risk/' },
+    { key: 'legalFinance', label: 'Legal & finance data',     share: 0.149, severity: 'high',     example: 'Sales pipeline, investments, M&A, legal matters',
+      source: 'Harmonic Security (Q4 2024): 14.9% of sensitive prompts.', url: 'https://www.helpnetsecurity.com/2025/01/20/genai-prompts-risk/' },
+    { key: 'security',     label: 'Security data',            share: 0.069, severity: 'critical', example: 'Network configurations, pen-test results, incident reports',
+      source: 'Harmonic Security (Q4 2024): 6.9% of sensitive prompts.', url: 'https://www.helpnetsecurity.com/2025/01/20/genai-prompts-risk/' },
+    { key: 'code',         label: 'Source code & access keys', share: 0.056, severity: 'critical', example: 'Proprietary code, API and access keys',
+      source: 'Harmonic Security (Q4 2024): 5.6% of sensitive prompts.', url: 'https://www.helpnetsecurity.com/2025/01/20/genai-prompts-risk/' }
   ]
 };
 
