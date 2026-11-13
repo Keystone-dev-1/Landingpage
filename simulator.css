@@ -53,6 +53,7 @@ body.s1 nav.top{display:none}
 @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
 /* ---------- stage ---------- */
+.demo,.card,.cta-block,.out,.step-note{scroll-margin-top:84px}
 .stage{scroll-margin-top:68px;padding:28px 0 96px;background:var(--paper);min-height:calc(100vh - 68px)}
 .stage-hd{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:24px}
 .stage-hd h2{font-size:clamp(28px,3vw,44px);margin-top:8px}
@@ -216,6 +217,7 @@ mark.back{color:var(--g);box-shadow:inset 0 -2px var(--g);animation:fade .5s bot
 .as .v{font-family:var(--font-mono);font-size:13.5px;color:var(--ink);white-space:nowrap}
 .as .u{font-size:13px;color:var(--slate-500)}
 .as .s{font-size:12.5px;color:var(--slate-500);margin-top:4px}
+.as .s a{color:var(--teal-600);white-space:nowrap}
 .fx{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding:10px 0;border-top:1px solid var(--slate-100)}
 .fx .t{font-size:13px;color:var(--slate-500);grid-column:1/-1}
 .fx .v{font-family:var(--font-mono);color:var(--ink);text-align:right}

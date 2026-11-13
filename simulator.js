@@ -58,6 +58,9 @@ function scrollToEl(el, block) {
   el.scrollIntoView({ behavior: 'smooth', block: block || 'nearest' });
 }
 var leakedFmt = function (v) { return Math.round(v) === 0 ? '0 leaked' : fmt(v); };
+var stacked = function () { return window.matchMedia && matchMedia('(max-width: 960px)').matches; };
+// on phones the demo sits below the dashboard: keep the active part of it on screen
+var follow = function (node) { if (!FAST && stacked() && node) node.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); };
 var quiet = function (p) { p.catch(function () {}); return p; };
 var gtagEv = function (name, params) { try { window.gtag && window.gtag('event', name, params || {}); } catch (e) {} };
 
@@ -94,14 +97,15 @@ input.addEventListener('input', function () { if (startErr.textContent) { startE
 var FEED = [ // illustrative sample events (masked). Content only, no figures.
   ['customer',  'Customer email',     'k•••@••••••.eu',            'ChatGPT',    'Sales'],
   ['employee',  'Salary figure',      '€ ••.•••,•• [5-digit]',     'Copilot',    'HR'],
-  ['financial', 'IBAN',               'AT61 •••• •••• •••• 3201',  'ChatGPT',    'Finance'],
+  ['legalFinance', 'IBAN',               'AT61 •••• •••• •••• 3201',  'ChatGPT',    'Finance'],
   ['customer',  'Customer name',      'M••••• H•••••',             'Gemini',     'Customer Service'],
   ['code',      'API key',            'sk-••••••••••••3f9a',       'Claude',     'IT'],
   ['customer',  'Phone number',       '+43 6•• ••• ••12',          'ChatGPT',    'Sales'],
-  ['legal',     'Contract draft',     'NDA_••••_draft.docx',       'Copilot',    'Legal'],
+  ['legalFinance', 'Contract draft',     'NDA_••••_draft.docx',       'Copilot',    'Legal'],
   ['employee',  'Sick-leave record',  '[HR record · 2026-••-••]',  'ChatGPT',    'HR'],
   ['customer',  'Customer address',   '[location · AT-W]',         'Perplexity', 'Marketing'],
-  ['financial', 'Invoice amount',     '€ •••.•••,••',              'Gemini',     'Finance'],
+  ['security',  'Network config',     'fw-rule 10.24.•.•/••',      'Gemini',     'IT'],
+  ['legalFinance', 'Invoice amount',     '€ •••.•••,••',              'Gemini',     'Finance'],
   ['code',      'Database password',  'db_pass=••••••••',          'ChatGPT',    'R&D'],
   ['customer',  'Customer email',     'a•••@••••••.at',            'Copilot',    'Customer Service']
 ];
@@ -253,7 +257,7 @@ function fillHidden() {
   set('prompts_per_year', Math.round(R.promptsPerYear));
   set('sensitive_prompts_per_day', Math.round(R.sensitivePromptsPerDay));
   set('sensitive_prompts_per_year', Math.round(R.sensitivePromptsPerYear));
-  var names = { customer: 'cat_customer_personal_data', employee: 'cat_employee_data', financial: 'cat_financial_data', code: 'cat_source_code_credentials', legal: 'cat_legal_strategic' };
+  var names = { customer: 'cat_customer_personal_data', employee: 'cat_employee_data', legalFinance: 'cat_legal_finance', security: 'cat_security', code: 'cat_source_code' };
   R.categories.forEach(function (c) { if (names[c.key]) set(names[c.key], c.count); });
 }
 
@@ -347,10 +351,10 @@ async function play() {
   var Rc = $('#colR');
   Rc.classList.remove('empty');
   el.bench = buildBench(); Rc.appendChild(el.bench);
-  if (!FAST) $('#stage').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (!FAST) (stacked() ? el.bench : $('#stage')).scrollIntoView({ behavior: 'smooth', block: 'start' });
   await sleep(1200);
   await demo();
-  await sleep(900);
+  await sleep(2500);
   await protect();
 
   /* ---- Scene 6 · CTA ---- */
@@ -389,6 +393,7 @@ async function demo() {
   setFlow(1);
   outR.textContent = 'Redacted on your device';
   out.innerHTML = segHTML(DEMO.prompt, 'redact');
+  follow(out.parentNode);
   say('<b>Redact.</b> Each value is replaced with a placeholder. This is all the AI provider will receive.');
   await sleep(1700);
 
@@ -401,6 +406,7 @@ async function demo() {
   await sleep(900);
   out.innerHTML = segHTML(DEMO.reply, 'ph');
   rest.disabled = false;
+  follow(out.parentNode);
   await sleep(1500);
 
   /* 5 · restore */
@@ -409,6 +415,7 @@ async function demo() {
   var nPh = DEMO.reply.filter(function (s) { return typeof s !== 'string'; }).length;
   for (var r = 1; r <= nPh; r++) { out.innerHTML = segHTML(DEMO.reply, 'restore', r); await sleep(260); }
   rest.disabled = true;
+  follow(note);
   say('<b>Restore.</b> The real values are put back into the answer locally. Nothing sent. Nothing stored. Nothing risked.');
 }
 
@@ -459,6 +466,7 @@ $('#restartBtn').addEventListener('click', function () {
 /* =========================================================
    "How we calculate this"
    ========================================================= */
+function srcLink(a) { return a.url ? ' <a href="' + esc(a.url) + '" target="_blank" rel="noopener">View source ↗</a>' : ''; }
 function asValue(key, a) {
   if (/Rate$/.test(key)) return pct(a.value);
   return fmt(a.value) === String(a.value) ? fmt(a.value) : String(a.value);
@@ -469,11 +477,11 @@ function renderCalc() {
   h += '<h3>Assumptions</h3>';
   keys.forEach(function (k) {
     var a = A[k];
-    h += '<div class="as"><div class="r"><b>' + esc(a.label) + '</b><span class="v">' + asValue(k, a) + '</span></div><div class="u">' + esc(a.unit) + '</div><div class="s">Source: ' + esc(a.source) + '</div></div>';
+    h += '<div class="as"><div class="r"><b>' + esc(a.label) + '</b><span class="v">' + asValue(k, a) + '</span></div><div class="u">' + esc(a.unit) + '</div><div class="s">Source: ' + esc(a.source) + srcLink(a) + '</div></div>';
   });
   h += '<h3>Sensitive data by type</h3>';
   A.categories.forEach(function (c) {
-    h += '<div class="as"><div class="r"><b>' + esc(c.label) + '</b><span class="v">' + pct(c.share) + '</span></div><div class="u">' + esc(c.example) + ' · shown as ' + SEV[c.severity].n.toLowerCase() + ' severity</div><div class="s">Source: ' + esc(c.source) + '</div></div>';
+    h += '<div class="as"><div class="r"><b>' + esc(c.label) + '</b><span class="v">' + pct(c.share) + '</span></div><div class="u">' + esc(c.example) + ' · shown as ' + SEV[c.severity].n.toLowerCase() + ' severity</div><div class="s">Source: ' + esc(c.source) + srcLink(c) + '</div></div>';
   });
   if (R) {
     h += '<h3>Formulas, with your numbers</h3>';

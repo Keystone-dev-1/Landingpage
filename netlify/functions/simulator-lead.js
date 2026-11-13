@@ -30,8 +30,8 @@ exports.handler = async (event) => {
     prompts_per_day: s('prompts_per_day'), prompts_per_year: s('prompts_per_year'),
     sensitive_prompts_per_day: s('sensitive_prompts_per_day'), sensitive_prompts_per_year: s('sensitive_prompts_per_year'),
     cat_customer_personal_data: s('cat_customer_personal_data'), cat_employee_data: s('cat_employee_data'),
-    cat_financial_data: s('cat_financial_data'), cat_source_code_credentials: s('cat_source_code_credentials'),
-    cat_legal_strategic: s('cat_legal_strategic'),
+    cat_legal_finance: s('cat_legal_finance'), cat_security: s('cat_security'),
+    cat_source_code: s('cat_source_code'),
     source: 'fairwall.ai/simulator', tags: 'fairwall-simulator', submitted_at: new Date().toISOString()
   };
 
