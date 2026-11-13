@@ -1,5 +1,9 @@
 /de            /index-de.html   200
 /de/           /index-de.html   200
+/simulator/book   /simulator-book.html   200
+/simulator/book/  /simulator-book.html   200
+/simulator/       /simulator.html        200
+/simulator        /simulator.html        200
 /en            /index.html      200
 /demo          /book-demo.html  301
 /pricing       /#pricing        301
