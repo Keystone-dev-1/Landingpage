@@ -113,10 +113,11 @@ function buildExposure() {
   c.innerHTML =
     '<div class="card-hd"><div><h3><span class="n">01</span>Data exposure</h3><div class="sub">Sensitive data leaving your organization through AI tools</div></div>' +
     '<span class="badge-sim"><i></i>SIMULATED</span></div>' +
-    '<div class="lbl">Sensitive prompts sent to AI tools · one working day</div>' +
-    '<div class="big num"><span id="expNum">0</span><small>in clear text</small></div>' +
+    '<div class="lbl">Prompts with sensitive data sent to AI tools · one working day</div>' +
+    '<div class="big num"><span id="expNum">0</span><small class="h-risk">in clear text</small><small class="h-safe">leaked</small><span class="plus" id="expPlus" aria-hidden="true">+1</span></div>' +
     '<div class="track" aria-hidden="true"><span id="expBar"></span></div>' +
     '<div class="track-lg"><span>Start of day</span><span>End of day</span></div>' +
+    '<p class="cap"><span class="h-risk">Every line below is one prompt that left a computer with sensitive data in it. Each one adds 1 to the counter.</span><span class="h-safe">The same prompts, redacted on the device before they reached any AI tool.</span></p>' +
     '<div class="feed" id="feed" aria-hidden="true"></div>';
   return c;
 }
@@ -126,7 +127,8 @@ function feedItem(f) {
   d.className = 'fe';
   d.innerHTML = '<i style="background:' + sev.c + '"></i><div>' +
     '<div class="l1"><b>' + esc(f[1]) + '</b><span class="mv">' + esc(f[2]) + '</span><span class="dt">detected</span></div>' +
-    '<div class="l2">→ sent to ' + esc(f[3]) + ' in clear text</div>' +
+    '<div class="l2 bad">→ sent to ' + esc(f[3]) + ' in clear text</div>' +
+    '<div class="l2 good">→ redacted on the device before ' + esc(f[3]) + '</div>' +
     '<div class="l3">' + esc(f[4]) + ' · ' + esc(cat.label) + '</div></div>';
   return d;
 }
@@ -266,36 +268,55 @@ function start(n) {
   $('#skipBtn').hidden = REDUCED;
   $('#stageTitle').textContent = 'Simulation for ' + fmt(n) + ' computer' + (n === 1 ? '' : 's');
   var L = $('#colL'), Rc = $('#colR');
-  L.innerHTML = ''; Rc.innerHTML = ''; L.className = 'col col-l empty';
+  L.innerHTML = ''; Rc.innerHTML = ''; L.className = 'col col-l'; Rc.className = 'col col-r empty';
   el = {};
   window.scrollTo(0, 0);
   play().catch(function (e) { if (!(e instanceof Stop)) throw e; });
 }
 
 async function play() {
-  var Rc = $('#colR');
-  /* ---- Scene 2 · exposure: slow start, sharp finish ---- */
-  el.exp = buildExposure(); Rc.appendChild(el.exp);
-  var expNum = $('#expNum', el.exp), expBar = $('#expBar', el.exp), feed = $('#feed', el.exp);
-  var shown = 0, total = FEED.length;
-  await tween(3600, function (t) { return t; }, function (t) {
-    var e = easeIn(t);
-    expBar.style.width = (e * 100) + '%';
-    expNum.textContent = fmt(R.sensitivePromptsPerDay * e);
-    // event i appears when the ease-in curve passes i/total → feed accelerates
-    var due = Math.min(total, Math.floor(e * total + 1e-9));
-    while (shown < due) { feed.insertBefore(feedItem(FEED[shown]), feed.firstChild); shown++; }
-  });
-  expNum._v = R.sensitivePromptsPerDay;
-  while (shown < total) { feed.insertBefore(feedItem(FEED[shown]), feed.firstChild); shown++; }
-  await sleep(700);
+  var L = $('#colL');
+  /* ---- Scene 2 · exposure ----
+     First messages arrive one at a time, slow enough to read, and each one visibly
+     adds 1 to the counter. Then the pace and the counter accelerate (ease-in). */
+  el.exp = buildExposure(); L.appendChild(el.exp);
+  var expNum = $('#expNum', el.exp), expBar = $('#expBar', el.exp), feed = $('#feed', el.exp), plus = $('#expPlus', el.exp);
+  var total = R.sensitivePromptsPerDay, fi = 0;
+  var addEvent = function () {
+    feed.insertBefore(feedItem(FEED[fi % FEED.length]), feed.firstChild); fi++;
+    while (feed.children.length > 14) feed.removeChild(feed.lastChild);
+  };
+  var show = function (v) { expNum.textContent = fmt(v); expBar.style.width = Math.min(100, v / Math.max(total, 1) * 100) + '%'; };
+  var bump = function () { if (FAST) return; plus.classList.remove('go'); void plus.offsetWidth; plus.classList.add('go'); };
+
+  var SLOW = [1200, 3000, 2600, 2100, 1600];                         // pause before each of the first messages
+  var slowN = Math.max(1, Math.min(SLOW.length, Math.floor(total)));
+  for (var i = 0; i < slowN; i++) {
+    await sleep(SLOW[i]);
+    addEvent(); show(Math.min(i + 1, total)); bump();
+  }
+  if (total > slowN) {
+    await sleep(1300);
+    var acc = 0, last = null;
+    await tween(8000, function (t) { return t; }, function (p) {
+      var now = performance.now(), dt = last === null ? 0 : now - last; last = now;
+      acc += dt;
+      var gap = 1300 * Math.pow(1 - p, 2.2) + 70;                       // messages arrive faster and faster
+      while (acc >= gap) { acc -= gap; addEvent(); }
+      show(slowN + (total - slowN) * easeIn(p));                        // counter speeds up with them
+    });
+    if (FAST) while (fi < FEED.length) addEvent();
+  }
+  show(total); expNum._v = total;
+  await sleep(2000);
 
   /* ---- Scene 3 · what's leaking: count up, ease-out ---- */
-  el.leak = buildLeak(); Rc.appendChild(el.leak); scrollToEl(el.leak);
+  el.leak = buildLeak(); L.appendChild(el.leak); scrollToEl(el.leak);
+  await sleep(500);
   var max = Math.max.apply(null, R.categories.map(function (c) { return c.count; })) || 1;
   var rows = el.leak.querySelectorAll('.erow'), chips = el.leak.querySelectorAll('.sevchip');
   var sevT = sevTotals(R.categories);
-  await tween(2600, easeOut, function (p) {
+  await tween(3000, easeOut, function (p) {
     R.categories.forEach(function (c, i) {
       rows[i].querySelector('.val').textContent = fmt(c.count * p);
       rows[i].querySelector('.bar span').style.width = (c.count / max * 100 * p) + '%';
@@ -304,56 +325,35 @@ async function play() {
   });
   R.categories.forEach(function (c, i) { rows[i].querySelector('.val')._v = c.count; });
   sevT.forEach(function (s, i) { chips[i].querySelector('.num')._v = s[1]; });
-  await sleep(500);
+  await sleep(1800);
 
-  /* ---- Scene 4 · KPI boxes: stagger 150 ms, each counts up ---- */
-  el.kpis = buildKpis(); Rc.appendChild(el.kpis);
-  el.calc = buildCalcLink(); Rc.appendChild(el.calc);
+  /* ---- Scene 4 · KPI boxes: one after another, each counts up ---- */
+  el.kpis = buildKpis(); L.appendChild(el.kpis);
+  el.calc = buildCalcLink(); L.appendChild(el.calc);
   scrollToEl(el.kpis, 'center');
+  await sleep(500);
   var boxes = Array.prototype.slice.call(el.kpis.children);
   var counts = boxes.map(function (b, i) {
-    return sleep(i * 150).then(function () {
+    return sleep(i * 350).then(function () {
       b.style.opacity = ''; if (!FAST) b.classList.add('enter');
-      return countTo(b.querySelector('.v'), b._def.v, 1700, easeOut);
+      return countTo(b.querySelector('.v'), b._def.v, 2200, easeOut);
     });
   });
   await Promise.all(counts);
-  await sleep(800);
+  await sleep(1800);
 
-  /* ---- Scene 5 · numbers move left, demo appears right ---- */
-  if (!FAST) { $('#stage').scrollIntoView({ behavior: 'smooth', block: 'start' }); await sleep(450); }
-  el.exp.style.transition = 'opacity .3s'; el.exp.style.opacity = '0';
-  await sleep(300);
-  var moving = [el.kpis, el.leak, el.calc];
-  // re-inserting a node restarts its CSS entrance animation, so drop it first
-  [el.leak].concat(Array.prototype.slice.call(el.kpis.children)).forEach(function (n) { n.classList.remove('enter'); });
-  var first = moving.map(function (m) { return m.getBoundingClientRect(); });
-  el.exp.remove();
-  var L = $('#colL');
-  L.classList.remove('empty');
-  moving.forEach(function (m) { L.appendChild(m); });
-  el.bench = buildBench(); el.bench.style.opacity = '0';
-  $('#colR').appendChild(el.bench);
-  if (!FAST) {
-    moving.forEach(function (m, i) {
-      var last = m.getBoundingClientRect();
-      m.style.transition = 'none';
-      m.style.transform = 'translate(' + (first[i].left - last.left) + 'px,' + (first[i].top - last.top) + 'px)';
-    });
-    void document.body.offsetWidth;
-    moving.forEach(function (m) { m.style.transition = 'transform .85s cubic-bezier(.2,.8,.2,1)'; m.style.transform = ''; });
-    await sleep(700);
-  }
-  el.bench.style.transition = 'opacity .45s'; el.bench.style.opacity = '';
-  await sleep(500);
-  moving.forEach(function (m) { m.style.transition = ''; m.style.transform = ''; });
-
+  /* ---- Scene 5 · the solution appears on the right ---- */
+  var Rc = $('#colR');
+  Rc.classList.remove('empty');
+  el.bench = buildBench(); Rc.appendChild(el.bench);
+  if (!FAST) $('#stage').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  await sleep(1200);
   await demo();
-  await sleep(400);
+  await sleep(900);
   await protect();
 
   /* ---- Scene 6 · CTA ---- */
-  await sleep(500);
+  await sleep(700);
   $('#skipBtn').hidden = true;
   var cta = $('#cta'); cta.hidden = false;
   if (!FAST) { cta.classList.add('enter'); scrollToEl(cta, 'center'); }
@@ -371,7 +371,7 @@ async function demo() {
   say('An employee asks an AI tool for help. The request contains a <b>name</b>, an <b>email</b>, a <b>customer ID</b> and an <b>IBAN</b>.');
   var full = plain(DEMO.prompt);
   if (FAST) txt.textContent = full;
-  else for (var i = 1; i <= full.length; i++) { txt.innerHTML = esc(full.slice(0, i)) + '<span class="caret"></span>'; await sleep(26); }
+  else for (var i = 1; i <= full.length; i++) { txt.innerHTML = esc(full.slice(0, i)) + '<span class="caret"></span>'; await sleep(32); }
   await sleep(350);
 
   /* 2 · detect */
@@ -412,22 +412,36 @@ async function demo() {
 }
 
 async function protect() {
-  var boxes = Array.prototype.slice.call(el.kpis.children);
-  for (var i = 0; i < boxes.length; i++) {
-    var b = boxes[i];
-    b.classList.add('safe');
-    if (b._def.zero) quiet(countTo(b.querySelector('.v'), 0, 1100, easeOut));
-    await sleep(220);
-  }
+  /* exposure feed: every message turns into a redacted one, counter goes to 0 */
+  scrollToEl(el.exp, 'start'); await sleep(700);
+  el.exp.classList.add('safe');
+  quiet(countTo($('#expNum', el.exp), 0, 1400, easeOut));
+  var items = el.exp.querySelectorAll('.fe');
+  for (var f = 0; f < items.length; f++) { items[f].classList.add('safe'); await sleep(70); }
+  await sleep(900);
+
+  /* what's leaking */
+  scrollToEl(el.leak, 'center'); await sleep(600);
   el.leak.classList.add('safe');
   var rows = el.leak.querySelectorAll('.erow');
   for (var j = 0; j < rows.length; j++) {
     rows[j].classList.add('safe');
     quiet(countTo(rows[j].querySelector('.val'), 0, 1000, easeOut, leakedFmt));
-    await sleep(180);
+    await sleep(260);
   }
   el.leak.querySelectorAll('.sevchip .num').forEach(function (n) { quiet(countTo(n, 0, 900, easeOut)); });
-  await sleep(1000);
+  await sleep(900);
+
+  /* KPI boxes, one by one */
+  scrollToEl(el.kpis, 'center'); await sleep(600);
+  var boxes = Array.prototype.slice.call(el.kpis.children);
+  for (var i = 0; i < boxes.length; i++) {
+    var b = boxes[i];
+    b.classList.add('safe');
+    if (b._def.zero) quiet(countTo(b.querySelector('.v'), 0, 1100, easeOut));
+    await sleep(320);
+  }
+  await sleep(1100);
 }
 
 /* ---------- skip / restart ---------- */
