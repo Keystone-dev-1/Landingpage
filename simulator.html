@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Data Exposure Simulator — Fairwall AI</title>
+<meta name="description" content="Estimate how much sensitive data your organization sends to AI tools, based on the number of computers you run, and see how Fairwall AI keeps it on the device.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#080e19">
+<link rel="canonical" href="https://www.fairwall.ai/simulator">
+<link rel="icon" href="/assets/logo-mark-new.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fairwall AI">
+<meta property="og:url" content="https://www.fairwall.ai/simulator">
+<meta property="og:title" content="AI Data Exposure Simulator — Fairwall AI">
+<meta property="og:description" content="How much sensitive data leaves your organization through AI tools? Enter your number of computers and see the estimate.">
+<meta property="og:image" content="https://www.fairwall.ai/assets/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.fairwall.ai/assets/og-image.png">
+<script src="/analytics.js"></script>
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/simulator.css">
+</head>
+<body class="s1">
+
+<nav class="top" id="nav"><div class="wrap">
+<a class="logo" href="/"><img src="/assets/logo-mark-new.png" alt=""><span>F<span class="g">ai</span>rwall <span class="g">AI</span></span></a>
+<div class="links"><a href="/#try">Try it</a><a href="/#why">Why</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/simulator" class="cur" aria-current="page">Simulator</a></div>
+<div class="navr"><a class="btn btn-n" href="/book-demo">Book a demo</a></div>
+</div></nav>
+
+<main>
+<!-- ============ Scene 1 · entry ============ -->
+<section class="entry" id="entry">
+  <div class="entry-in">
+    <div class="over">Privacy in the Age of <span class="g">AI</span>.</div>
+    <h1 class="disp">Welcome to the <span class="g">Simulator</span></h1>
+    <form class="startf-wrap" id="startForm" novalidate>
+      <p class="q"><label for="computers">How many computers are there in your organization?</label></p>
+      <div class="startf">
+        <input id="computers" name="computers" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g. 250" aria-describedby="startErr" required>
+        <button class="btn btn-t" type="submit">Start simulation</button>
+      </div>
+      <p class="err" id="startErr" role="alert" aria-live="polite"></p>
+    </form>
+    <p class="fine">Estimate based on published-style assumptions you can inspect after the simulation. Nothing you enter here leaves your browser.</p>
+  </div>
+</section>
+
+<!-- ============ Scenes 2–6 ============ -->
+<section class="stage" id="stage" hidden>
+  <div class="wrap">
+    <div class="stage-hd">
+      <div><div class="over">AI data exposure simulation</div><h2 class="disp" id="stageTitle"></h2></div>
+      <div class="tools"><button class="linkbtn" id="skipBtn" type="button">Skip animation</button></div>
+    </div>
+    <div class="cols">
+      <div class="col col-l" id="colL" aria-live="polite"></div>
+      <div class="col col-r empty" id="colR"></div>
+    </div>
+    <div class="cta-block" id="cta" hidden>
+      <button class="btn btn-g" id="ctaBtn" type="button">Click to get a Free Demo on YOUR Data</button>
+      <p>30 minutes. We run Fairwall AI on the kind of data your team actually handles.</p>
+      <div class="again"><button class="linkbtn" id="restartBtn" type="button">Restart simulation</button></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ How we calculate this ============ -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="calcDrawer" role="dialog" aria-modal="true" aria-labelledby="calcTitle" aria-hidden="true">
+  <div class="dh"><div><div class="over">Transparency</div><h2 id="calcTitle">How we calculate this</h2></div>
+    <button class="xbtn" type="button" data-close aria-label="Close"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3d4a5c" stroke-width="2.4"><path d="M5 5l14 14M19 5 5 19"/></svg></button></div>
+  <div class="db" id="calcBody"></div>
+</aside>
+
+<!-- ============ Lead form (Netlify Forms) ============ -->
+<div class="modal" id="leadModal" role="dialog" aria-modal="true" aria-labelledby="leadTitle" aria-hidden="true">
+  <div class="box">
+    <div class="top">
+      <div><div class="over">Free demo on your data</div><h2 id="leadTitle">Let's look at your real exposure.</h2></div>
+      <button class="xbtn" type="button" data-close aria-label="Close"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3d4a5c" stroke-width="2.4"><path d="M5 5l14 14M19 5 5 19"/></svg></button>
+    </div>
+    <p class="lead">Tell us a little about your organization. Next you pick a time for a 30-minute session.</p>
+
+    <form name="simulator-lead" id="leadForm" method="POST" action="/simulator/book" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="simulator-lead">
+      <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+      <div class="row2">
+        <div class="f"><label for="fEmail">Work email</label><input id="fEmail" name="email" type="email" autocomplete="email" required><div class="ferr" id="eEmail"></div></div>
+        <div class="f"><label for="fCompany">Company name</label><input id="fCompany" name="company" type="text" autocomplete="organization" required><div class="ferr" id="eCompany"></div></div>
+      </div>
+      <div class="f"><label for="fPhone">Phone (with country code)</label><input id="fPhone" name="phone" type="tel" autocomplete="tel" placeholder="+43 660 1234567" required><div class="ferr" id="ePhone"></div></div>
+
+      <fieldset class="f" id="fsBlock"><legend>Is your company currently blocking AI tools?</legend>
+        <div class="opts">
+          <label><input type="radio" name="ai_blocking" value="Yes, fully" required> Yes, fully</label>
+          <label><input type="radio" name="ai_blocking" value="Partially"> Partially</label>
+          <label><input type="radio" name="ai_blocking" value="No"> No</label>
+          <label><input type="radio" name="ai_blocking" value="Not sure"> Not sure</label>
+        </div><div class="ferr" id="eBlock"></div>
+      </fieldset>
+
+      <div class="row2">
+        <div class="f"><label for="fSize">How big is your company?</label>
+          <select id="fSize" name="company_size" required>
+            <option value="">Select…</option>
+            <option>1–10 employees</option><option>11–50 employees</option><option>51–250 employees</option><option>251–1,000 employees</option><option>1,000+ employees</option>
+          </select><div class="ferr" id="eSize"></div></div>
+        <div class="f"><label for="fIndustry">What industry are you in?</label>
+          <select id="fIndustry" name="industry" required>
+            <option value="">Select…</option>
+            <option>Finance &amp; Insurance</option><option>Healthcare</option><option>Legal</option><option>Public Sector</option><option>Manufacturing</option><option>IT &amp; Software</option><option>Consulting</option><option>Retail</option><option>Other</option>
+          </select><div class="ferr" id="eIndustry"></div></div>
+      </div>
+      <div class="f" id="otherWrap" hidden><label for="fOther">Your industry</label><input id="fOther" name="industry_other" type="text"><div class="ferr" id="eOther"></div></div>
+
+      <!-- simulation results, filled in by simulator.js -->
+      <input type="hidden" name="computers">
+      <input type="hidden" name="ai_users">
+      <input type="hidden" name="shadow_ai_users">
+      <input type="hidden" name="prompts_per_day">
+      <input type="hidden" name="prompts_per_year">
+      <input type="hidden" name="sensitive_prompts_per_day">
+      <input type="hidden" name="sensitive_prompts_per_year">
+      <input type="hidden" name="cat_customer_personal_data">
+      <input type="hidden" name="cat_employee_data">
+      <input type="hidden" name="cat_financial_data">
+      <input type="hidden" name="cat_source_code_credentials">
+      <input type="hidden" name="cat_legal_strategic">
+
+      <button class="btn btn-n submit" type="submit" id="leadSubmit">Continue to booking →</button>
+      <div class="formerr" id="formErr" role="alert"></div>
+      <p class="priv">We use your details only to prepare and schedule your demo. See our <a href="/terms">terms and privacy information</a>.</p>
+    </form>
+  </div>
+</div>
+
+<script src="/simulator-assumptions.js"></script>
+<script src="/simulator.js"></script>
+</body>
+</html>

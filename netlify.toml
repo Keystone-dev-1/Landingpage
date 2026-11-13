@@ -16,6 +16,23 @@
   from = "/de/"
   to = "/index-de.html"
   status = 200
+# Simulator: /simulator and its thank-you/booking step /simulator/book
+[[redirects]]
+  from = "/simulator/book"
+  to = "/simulator-book.html"
+  status = 200
+[[redirects]]
+  from = "/simulator/book/"
+  to = "/simulator-book.html"
+  status = 200
+[[redirects]]
+  from = "/simulator/"
+  to = "/simulator.html"
+  status = 200
+[[redirects]]
+  from = "/simulator"
+  to = "/simulator.html"
+  status = 200
 [[redirects]]
   from = "/en"
   to = "/"
