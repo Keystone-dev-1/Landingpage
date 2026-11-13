@@ -225,10 +225,11 @@ function buildBench() {
   var w = document.createElement('section');
   w.className = 'demo enter';
   w.innerHTML =
+    '<h2 class="sol-hd">The Solution – <span class="wm">F<span class="g">ai</span>rwall <span class="g">AI</span></span></h2>' +
     '<div class="bench" aria-label="Fairwall AI demo">' +
       '<div class="tbar"><i></i><i></i><i></i><span class="tab">New chat</span></div>' +
       '<div class="ubar"><span class="u">chatgpt.com</span><span class="ext" title="Fairwall AI plug-in"><img src="/assets/logo-mark-new.png" alt="Fairwall AI plug-in"></span></div>' +
-      '<div class="hd"><b>The solution · Fairwall AI in action</b></div>' +
+      '<div class="hd"><b>Live demo · detect, redact, restore</b></div>' +
       '<div class="pane"><div class="composer"><div class="txt" id="dTxt"><span class="caret"></span></div><span class="hint">Message any AI tool</span></div><div class="meter" id="dMeter"></div></div>' +
       '<div class="out"><label><span id="dOutL">What the AI receives</span><span id="dOutR">Waiting for send</span></label><div class="body" id="dOut"><span class="wait">Nothing has left the device yet.</span></div></div>' +
       '<div class="act"><button class="btn btn-g" id="dSend" type="button" tabindex="-1">Send</button><button class="btn btn-o" id="dRest" type="button" tabindex="-1" style="box-shadow:inset 0 0 0 1px var(--navy-600);color:var(--white)!important" disabled>Restore values</button>' +
@@ -340,7 +341,7 @@ async function play() {
     });
   });
   await Promise.all(counts);
-  await sleep(1800);
+  await sleep(2800);
 
   /* ---- Scene 5 · the solution appears on the right ---- */
   var Rc = $('#colR');
