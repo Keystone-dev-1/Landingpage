@@ -7,14 +7,14 @@
 <section class="lg-hero"><div class="lg-inner">
 <p class="lg-eyebrow" style="display:block">Free demo on your data</p>
 <h1 style="display:block">Let's look at your data together.</h1>
-<p style="display:block">Tell us a little about your organization, then pick a time for a 30-minute session. We run Fairwall AI on the kind of data your team actually handles and replace the simulator's estimates with real figures.</p>
+<p style="display:block">Pick a time for a 30-minute session, then tell us a little about your organization. We run Fairwall AI on the kind of data your team actually handles and replace the simulator's estimates with real figures.</p>
 <p id="simSummary" style="display:none;margin-top:14px;font-family:var(--font-mono);font-size:13px;letter-spacing:.02em;opacity:.85"></p>
 </div></section>
 <main><div class="lg-inner">
 <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:22px">
 <div style="background:#fff;border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 12px 34px rgba(8,14,25,.1)">
 <!-- Booking: GoHighLevel calendar "Book a Demo with Fairwall AI" (form first, then slot). Change the URL here, in the button below and in BASE in the script at the bottom. -->
-<iframe id="bookFrame" src="https://api.coffeeshop-launchpad.com/widget/booking/Zv8Z6EnvWX3wStC8Q6Fs" title="Book your Fairwall AI demo" style="width:100%;height:1500px;border:none;display:block" scrolling="auto"></iframe>
+<iframe id="Zv8Z6EnvWX3wStC8Q6Fs_fw" src="https://api.coffeeshop-launchpad.com/widget/booking/Zv8Z6EnvWX3wStC8Q6Fs" title="Book your Fairwall AI demo" style="width:100%;height:1150px;border:none;display:block"></iframe>
 </div>
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px">
 <a id="bookLink" href="https://api.coffeeshop-launchpad.com/widget/booking/Zv8Z6EnvWX3wStC8Q6Fs" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;border-radius:12px;background:var(--navy-950);color:#fff;font-weight:600;text-decoration:none">Open the booking page in a new tab ↗</a>
@@ -36,7 +36,7 @@
   if(!d) return;
   var q=new URLSearchParams(); Object.keys(d).forEach(function(k){ q.set(k,d[k]); });
   var url=BASE+'?'+q.toString();
-  document.getElementById('bookFrame').src=url;
+  document.getElementById('Zv8Z6EnvWX3wStC8Q6Fs_fw').src=url;
   document.getElementById('bookLink').href=url;
   var nf=new Intl.NumberFormat('en-US');
   var s=document.getElementById('simSummary');
