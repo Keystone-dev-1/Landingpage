@@ -2,7 +2,7 @@
 // Receives the Simulator lead form and forwards it to GoHighLevel.
 // The webhook URL is NOT in the code (this repo is public):
 // Netlify → Project configuration → Environment variables → GHL_WEBHOOK_URL
-const REQUIRED = ['email', 'company', 'phone', 'ai_blocking', 'company_size', 'industry'];
+const REQUIRED = ['first_name', 'last_name', 'email', 'company', 'phone', 'ai_blocking', 'company_size', 'industry'];
 
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') return { statusCode: 405, body: 'Method not allowed' };
@@ -23,6 +23,7 @@ exports.handler = async (event) => {
 
   const s = (k) => String(d[k] || '').trim().slice(0, 300);
   const lead = {
+    first_name: s('first_name'), last_name: s('last_name'),
     email: s('email'), phone: s('phone'), company_name: s('company'),
     ai_blocking: s('ai_blocking'), company_size: s('company_size'),
     industry: d.industry === 'Other' && d.industry_other ? 'Other: ' + s('industry_other') : s('industry'),

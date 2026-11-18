@@ -12,11 +12,11 @@
 <main><div class="lg-inner">
 <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:22px">
 <div style="background:#fff;border:1px solid var(--border-default);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 12px 34px rgba(8,14,25,.1)">
-<!-- Booking link: change it here and in the button below -->
-<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3yA2ZfglKxsn7l9jJ9G_oDON8tbSxzA9oaZBEH-B9Z9nW0SuUvyxzxthkYKZc08uiaE_e64zxT?gv=true" title="Book your Fairwall AI demo" style="width:100%;height:720px;border:none;display:block"></iframe>
+<!-- Booking: GoHighLevel calendar "Book a Demo with Fairwall AI". Change the URL here, in the button below and in BASE in the script at the bottom. -->
+<iframe id="bookFrame" src="https://api.coffeeshop-launchpad.com/widget/booking/Zv8Z6EnvWX3wStC8Q6Fs" title="Book your Fairwall AI demo" style="width:100%;height:1000px;border:none;display:block" scrolling="auto"></iframe>
 </div>
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px">
-<a href="https://calendar.app.google/oMppAFrYK9qQw9wn9" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;border-radius:12px;background:var(--navy-950);color:#fff;font-weight:600;text-decoration:none">Open the booking page in a new tab ↗</a>
+<a id="bookLink" href="https://api.coffeeshop-launchpad.com/widget/booking/Zv8Z6EnvWX3wStC8Q6Fs" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;border-radius:12px;background:var(--navy-950);color:#fff;font-weight:600;text-decoration:none">Open the booking page in a new tab ↗</a>
 <span style="font-size:13px;color:var(--text-tertiary)">Calendar not loading? Use the button.</span>
 </div>
 </div>
@@ -26,5 +26,19 @@
 <span>© 2026 Data Dynamics AI FlexCo. All rights reserved.</span>
 <span class="lg-links"><a href="/impressum">Impressum</a><a href="/terms">AGB / Terms</a><a href="/">Home</a></span>
 </div></footer>
-<script>try{window.gtag&&gtag('event','simulator_booking_view')}catch(e){}</script>
+<script>
+/* Pre-fill the GoHighLevel booking form with what the visitor already entered in the Simulator form.
+   Values come from sessionStorage (set on submit), so they never appear in this page's own URL. */
+(function(){
+  var BASE='https://api.coffeeshop-launchpad.com/widget/booking/Zv8Z6EnvWX3wStC8Q6Fs';
+  var d=null; try{d=JSON.parse(sessionStorage.getItem('fw_lead')||'null')}catch(e){}
+  if(!d) return;
+  var q=new URLSearchParams();
+  ['first_name','last_name','email','phone'].forEach(function(k){ if(d[k]) q.set(k,d[k]); });
+  var url=BASE+(q.toString()?'?'+q.toString():'');
+  document.getElementById('bookFrame').src=url;
+  document.getElementById('bookLink').href=url;
+})();
+try{window.gtag&&gtag('event','simulator_booking_view')}catch(e){}
+</script>
 </body></html>

@@ -82,12 +82,16 @@
       <div><div class="over">Free demo on your data</div><h2 id="leadTitle">Let's look at your real exposure.</h2></div>
       <button class="xbtn" type="button" data-close aria-label="Close"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3d4a5c" stroke-width="2.4"><path d="M5 5l14 14M19 5 5 19"/></svg></button>
     </div>
-    <p class="lead">Tell us a little about your organization. Next you pick a time for a 30-minute session.</p>
+    <p class="lead">Tell us a little about your organization. Next you pick a time for a 30-minute session — your details are carried over, so you only choose the slot.</p>
 
     <form name="simulator-lead" id="leadForm" method="POST" action="/simulator/book" data-netlify="true" netlify-honeypot="bot-field" novalidate>
       <input type="hidden" name="form-name" value="simulator-lead">
       <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 
+      <div class="row2">
+        <div class="f"><label for="fFirst">First name</label><input id="fFirst" name="first_name" type="text" autocomplete="given-name" required><div class="ferr" id="eFirst"></div></div>
+        <div class="f"><label for="fLast">Last name</label><input id="fLast" name="last_name" type="text" autocomplete="family-name" required><div class="ferr" id="eLast"></div></div>
+      </div>
       <div class="row2">
         <div class="f"><label for="fEmail">Work email</label><input id="fEmail" name="email" type="email" autocomplete="email" required><div class="ferr" id="eEmail"></div></div>
         <div class="f"><label for="fCompany">Company name</label><input id="fCompany" name="company" type="text" autocomplete="organization" required><div class="ferr" id="eCompany"></div></div>

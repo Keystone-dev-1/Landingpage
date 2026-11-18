@@ -540,6 +540,9 @@ function validate() {
     if (input) { if (msg) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid'); }
     if (msg && ok) { ok = false; var f = focusEl || input; f && f.focus(); }
   };
+  var first = $('#fFirst'), last = $('#fLast');
+  put('eFirst', first, first.value.trim() ? '' : 'Please enter your first name.');
+  put('eLast', last, last.value.trim() ? '' : 'Please enter your last name.');
   var email = $('#fEmail'), company = $('#fCompany'), phone = $('#fPhone'), size = $('#fSize');
   put('eEmail', email, !email.value.trim() ? 'Please enter your email address.' : !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim()) ? 'Please enter a valid email address.' : '');
   put('eCompany', company, company.value.trim() ? '' : 'Please enter your company name.');
@@ -566,6 +569,8 @@ form.addEventListener('submit', function (e) {
       gtagEv('generate_lead', { form: 'simulator' });
       // Backup copy in Netlify Forms (works once form detection is on; failures are ignored).
       try { fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body, keepalive: true }).catch(function () {}); } catch (e) {}
+      // hand name, email and phone to the booking page so the calendar is pre-filled
+      try { sessionStorage.setItem('fw_lead', JSON.stringify({ first_name: $('#fFirst').value.trim(), last_name: $('#fLast').value.trim(), email: $('#fEmail').value.trim(), phone: $('#fPhone').value.replace(/\s+/g, '') })); } catch (e) {}
       setTimeout(function () { window.location.href = '/simulator/book'; }, 150);
     })
     .catch(function () {
