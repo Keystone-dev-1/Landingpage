@@ -247,24 +247,26 @@ function buildBench() {
 /* =========================================================
    Scenes
    ========================================================= */
-function fillHidden() {
-  var f = $('#leadForm');
-  var set = function (n, v) { var i = f.querySelector('input[name="' + n + '"]'); if (i) i.value = v; };
-  set('computers', R.computers);
-  set('ai_users', Math.round(R.aiUsers));
-  set('shadow_ai_users', Math.round(R.shadowAiUsers));
-  set('prompts_per_day', Math.round(R.promptsPerDay));
-  set('prompts_per_year', Math.round(R.promptsPerYear));
-  set('sensitive_prompts_per_day', Math.round(R.sensitivePromptsPerDay));
-  set('sensitive_prompts_per_year', Math.round(R.sensitivePromptsPerYear));
+/* Simulator results handed to the booking page, which passes them to the GHL form
+   as URL parameters (picked up by hidden fields with the same query keys). */
+function simValues() {
+  var v = {
+    computers: R.computers,
+    ai_users: Math.round(R.aiUsers),
+    shadow_ai_users: Math.round(R.shadowAiUsers),
+    prompts_per_day: Math.round(R.promptsPerDay),
+    prompts_per_year: Math.round(R.promptsPerYear),
+    sensitive_prompts_per_day: Math.round(R.sensitivePromptsPerDay),
+    sensitive_prompts_per_year: Math.round(R.sensitivePromptsPerYear)
+  };
   var names = { customer: 'cat_customer_personal_data', employee: 'cat_employee_data', legalFinance: 'cat_legal_finance', security: 'cat_security', code: 'cat_source_code' };
-  R.categories.forEach(function (c) { if (names[c.key]) set(names[c.key], c.count); });
+  R.categories.forEach(function (c) { if (names[c.key]) v[names[c.key]] = c.count; });
+  return v;
 }
 
 function start(n) {
   RUN++; FAST = REDUCED; flushSleeps();
   R = window.computeSimulation(n);
-  fillHidden();
   gtagEv('simulator_start', { computers: n });
   document.body.className = 's2';
   $('#entry').hidden = true;
@@ -511,67 +513,20 @@ function openLayer(node) {
   setTimeout(function () { f && f.focus(); }, 60);
 }
 function closeLayers() {
-  ['#calcDrawer', '#leadModal'].forEach(function (s) { var n = $(s); n.classList.remove('on'); n.setAttribute('aria-hidden', 'true'); });
+  ['#calcDrawer'].forEach(function (s) { var n = $(s); n.classList.remove('on'); n.setAttribute('aria-hidden', 'true'); });
   $('#scrim').classList.remove('on');
   document.body.style.overflow = '';
   if (lastFocus && lastFocus.focus) lastFocus.focus();
 }
 document.addEventListener('click', function (e) {
   if (e.target.closest('[data-calc]')) { renderCalc(); openLayer($('#calcDrawer')); return; }
-  if (e.target.closest('[data-close]') || e.target === $('#scrim') || e.target === $('#leadModal')) closeLayers();
+  if (e.target.closest('[data-close]') || e.target === $('#scrim')) closeLayers();
 });
 document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLayers(); });
-$('#ctaBtn').addEventListener('click', function () { openLayer($('#leadModal')); gtagEv('simulator_cta_click'); });
-
-/* =========================================================
-   Lead form → Netlify Forms → /simulator/book
-   ========================================================= */
-var form = $('#leadForm');
-var industry = $('#fIndustry'), otherWrap = $('#otherWrap'), other = $('#fOther');
-industry.addEventListener('change', function () {
-  var on = industry.value === 'Other';
-  otherWrap.hidden = !on; other.required = on;
-  if (!on) other.value = '';
-});
-function validate() {
-  var ok = true;
-  var put = function (id, input, msg, focusEl) {
-    $('#' + id).textContent = msg || '';
-    if (input) { if (msg) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid'); }
-    if (msg && ok) { ok = false; var f = focusEl || input; f && f.focus(); }
-  };
-  var email = $('#fEmail'), company = $('#fCompany'), phone = $('#fPhone'), size = $('#fSize');
-  put('eEmail', email, !email.value.trim() ? 'Please enter your email address.' : !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim()) ? 'Please enter a valid email address.' : '');
-  put('eCompany', company, company.value.trim() ? '' : 'Please enter your company name.');
-  var digits = phone.value.replace(/\D/g, '');
-  put('ePhone', phone, !phone.value.trim() ? 'Please enter your phone number.' : !/^\s*(\+|00)\d/.test(phone.value) || !/^[\d\s+()\/.-]+$/.test(phone.value) || digits.length < 8 || digits.length > 15 ? 'Please include the country code, for example +43 660 1234567.' : '');
-  var blocking = form.querySelector('input[name="ai_blocking"]:checked');
-  put('eBlock', null, blocking ? '' : 'Please choose an answer.', form.querySelector('input[name="ai_blocking"]'));
-  put('eSize', size, size.value ? '' : 'Please choose your company size.');
-  put('eIndustry', industry, industry.value ? '' : 'Please choose your industry.');
-  if (industry.value === 'Other') put('eOther', other, other.value.trim() ? '' : 'Please tell us your industry.');
-  else put('eOther', null, '');
-  return ok;
-}
-form.addEventListener('submit', function (e) {
-  e.preventDefault();
-  $('#formErr').textContent = '';
-  if (!validate()) return;
-  var btn = $('#leadSubmit'); btn.disabled = true; btn.textContent = 'Sending…';
-  var body = new URLSearchParams(new FormData(form)).toString();
-  // Primary: our Netlify Function forwards the lead to GoHighLevel.
-  fetch('/.netlify/functions/simulator-lead', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
-    .then(function (r) {
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      gtagEv('generate_lead', { form: 'simulator' });
-      // Backup copy in Netlify Forms (works once form detection is on; failures are ignored).
-      try { fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body, keepalive: true }).catch(function () {}); } catch (e) {}
-      setTimeout(function () { window.location.href = '/simulator/book'; }, 150);
-    })
-    .catch(function () {
-      btn.disabled = false; btn.textContent = 'Continue to booking →';
-      $('#formErr').innerHTML = 'Your details could not be sent. Please try again, or email us at <a href="mailto:juan@ddynamics.ai">juan@ddynamics.ai</a>.';
-    });
+$('#ctaBtn').addEventListener('click', function () {
+  gtagEv('simulator_cta_click');
+  try { sessionStorage.setItem('fw_sim', JSON.stringify(simValues())); } catch (e) {}
+  window.location.href = '/simulator/book';
 });
 
 /* deep link for testing / sharing: /simulator?computers=250 */
