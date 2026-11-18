@@ -145,7 +145,7 @@ section.s{padding:clamp(96px,11vw,160px) 0}
 .dc .top{display:flex;justify-content:space-between;align-items:flex-start}
 .src{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:var(--slate-400);margin-top:18px}.src a{color:var(--slate-300);text-decoration:underline}
 .book{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:clamp(24px,4vw,64px);margin-top:56px;text-align:left;align-items:start}
-.cal{background:var(--white);border-radius:24px;overflow:hidden;min-height:720px}.cal iframe{width:100%;height:720px;border:0;display:block}
+.cal{background:var(--white);border-radius:24px;overflow:hidden;min-height:720px}.cal iframe{width:100%;height:1150px;border:0;display:block}
 .office{border:1px solid var(--navy-700);border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
 .office iframe{width:100%;flex:1;min-height:320px;border:0;display:block;filter:grayscale(.6) contrast(1.05)}
 .office .ad{padding:24px 26px;display:flex;flex-direction:column;gap:6px}
@@ -200,7 +200,7 @@ footer{padding:72px 0 32px;color:var(--slate-400);font-size:14px;border-top:1px 
 .rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
 @media (max-width:960px){
 .links{display:none}.hgrid,.bgrid,.sh{grid-template-columns:1fr}.sh p{justify-self:start}
-.pgrid,.dep,.tiers,.road,.book{grid-template-columns:1fr}.fgrid{grid-template-columns:1fr 1fr}.fgrid>div:first-child,.fgrid>div:last-child{grid-column:1/-1}.band .nl{grid-template-columns:1fr 1fr}.cal iframe{height:640px}.cal{min-height:640px}
+.pgrid,.dep,.tiers,.road,.book{grid-template-columns:1fr}.fgrid{grid-template-columns:1fr 1fr}.fgrid>div:first-child,.fgrid>div:last-child{grid-column:1/-1}.band .nl{grid-template-columns:1fr 1fr}.cal iframe{height:1150px}.cal{min-height:640px}
 .act{flex-wrap:wrap}.act .lat{margin-left:0;width:100%}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 .ln>span{transform:none}.rv{opacity:1;transform:none}}
@@ -306,7 +306,7 @@ nav.top .navr{gap:10px}nav.top .navr .btn{padding:0 14px}
 <h2 class="disp rv" style="margin-top:20px">Sieh es live<br><span class="g">in Aktion.</span></h2>
 <div class="book">
 <div class="rv" style="display:flex;flex-direction:column;gap:24px"><p style="margin:0;color:var(--slate-300);font-size:17px;line-height:1.6;max-width:420px">Wähle einen Termin, der dir passt. Wir zeigen Erkennung, Schwärzung und Wiederherstellung an realistischen Beispiel-Prompts und klären danach den Rollout.</p><ul class="bl"><li>30 Minuten, kein Verkaufsgespräch</li><li>Live-Durchgang an deinem Anwendungsfall</li><li>Rollout und Preise im Gespräch geklärt</li></ul></div>
-<div class="cal rv"><iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3yA2ZfglKxsn7l9jJ9G_oDON8tbSxzA9oaZBEH-B9Z9nW0SuUvyxzxthkYKZc08uiaE_e64zxT?gv=true" title="Fairwall AI Demo buchen" loading="lazy"></iframe><p style="margin:0;padding:14px 20px;border-top:1px solid var(--slate-200);font-size:14px;color:var(--slate-700)">Kalender lädt nicht? <a href="https://calendar.app.google/oMppAFrYK9qQw9wn9" target="_blank" rel="noopener" style="color:var(--teal-600);font-weight:600">Buchungsseite in neuem Tab öffnen ↗</a></p></div>
+<div class="cal rv"><iframe id="Zv8Z6EnvWX3wStC8Q6Fs_fw" src="https://api.coffeeshop-launchpad.com/widget/booking/Zv8Z6EnvWX3wStC8Q6Fs" title="Fairwall AI Demo buchen" loading="lazy"></iframe><p style="margin:0;padding:14px 20px;border-top:1px solid var(--slate-200);font-size:14px;color:var(--slate-700)">Kalender lädt nicht? <a href="https://api.coffeeshop-launchpad.com/widget/booking/Zv8Z6EnvWX3wStC8Q6Fs" target="_blank" rel="noopener" style="color:var(--teal-600);font-weight:600">Buchungsseite in neuem Tab öffnen ↗</a></p></div>
 </div>
 </div></section>
 </main>
@@ -386,5 +386,6 @@ document.querySelectorAll('#seg button').forEach(b=>b.onclick=()=>{document.quer
 <script>(function(){var n=document.getElementById('nav'),b=n&&n.querySelector('.mtog');if(!b)return;
 b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
 n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');b.setAttribute('aria-expanded','false')})});})();</script>
+<script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
 </body>
 </html>
